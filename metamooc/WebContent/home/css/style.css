@@ -1,0 +1,67 @@
+body{background: #fff4ec;overflow: hidden;}
+.nr{width: 1200px;margin: 0 auto;}
+.swiper-container{width: 100%;height: 100%;position: fixed;}
+.swiper-pagination{right: 70px !important;}
+.banner{background: url(../images/xsxd_banner_bg.jpg) no-repeat center top;background-size: cover;position: relative;height: 100%;}
+.banner>img{position: absolute;bottom: 0;width: 100%;}
+.logo{position: relative;z-index: 1;}
+.logo img{padding: 37px 0 0 62px;float: left;}
+.logo ul{list-style: none;padding: 50px 0 0 72px;margin: 0;float: left;}
+.logo li{float: left;background: url(../images/xsxd_nav_bg.png) no-repeat;background-size: 100%;font-family: 微软雅黑;font-weight: bold; width: 113px; height: 50px;text-align: center; padding-top: 23px;margin-left: 7px;}
+.logo li a{color: #338cc6;text-decoration: none;}
+.logo li:hover{filter: drop-shadow(0 0 2px #004061);transform: scale(1.1);}
+.banner .con{position: absolute;top: 50%;width: 100%;margin-top: -155px;}
+.banner .con img{display: block; margin: 20px auto;}
+.java{background: url(../images/xsxd_java_bg.jpg) no-repeat center;background-size:cover;position: relative;height: 100%;}
+.java>a{display: block;/height: 100%;}
+.java .con{width: 1035px;height: 574px;position: absolute;left: 50%;margin-left: -517px;top: 50%;margin-top: -287px;background: url(../images/xsxd_java_p1.png) no-repeat;}
+.java .con p{padding-left: 635px; width: 985px; font-family: 微软雅黑;color: white;}
+.java .con p:nth-child(1){font-size: 30px; padding-top: 215px;}
+.java .con p:nth-child(2){font-size: 60px; padding-top: 5px;text-align: center;}
+.java .con p:nth-child(3){font-size: 30px; padding-top: 5px;text-align: right;}
+.java .rightBtn{position: absolute;right: 40px;top: 40px;animation: tada 1s infinite;}
+.txy{background: url(../images/xsxd_txy_bg2.jpg) no-repeat center bottom #4ffaec;background-size: 100%;position: relative;height: 100%;}
+.txy>a{display: block;height: 100%;}
+.txy>a>img{position: absolute;top: 50%;left: 50%;margin-left: -356px;margin-top: -266px;}
+.txy .con{width: 1200px;position: absolute;left: 50%;margin-left: -600px;bottom: 2%;}
+.txy .con .gy{position: absolute;bottom: 165px;left: 130px;width: 143px;}
+.txy .con .gy img:nth-child(1){margin:0 0 0 150px;}
+.txy .con .gy img:nth-child(2){margin:15px 0 0 65px;width: 90%;}
+.txy .con .gy img:nth-child(3){margin:15px 0 0 35px;width: 80%;}
+.txy .con>img{display: block;margin: 0 auto;}
+.txy .con>img:last-child{position: absolute;right: 170px;bottom: 250px;}
+.txy .cloud div{position: absolute;left: -20%;width: 182px; height: 80px;background: url(../images/xsxd_txy_cloud.png) no-repeat; color: #338cc6; font-size: 30px;font-family: 微软雅黑;text-align: center;padding-top: 32px;}
+.txy .rightBtn{position: absolute;right: 40px;top: 40px;animation: tada 1s infinite;}
+.tyzy{background: url(../images/xsxd_tyzy_bg.jpg) no-repeat center #feeecc;position: relative;height: 100%;display: flex;flex-direction: column;}
+.tyzy .part{height: 100%;position: relative;}
+.tyzy>a{display: block;height: 100%;}
+.tyzy .con{width: 1200px;position: absolute;left: 50%;margin-left: -600px;top: 50%;margin-top: -261px;}
+.tyzy .con img:first-child{float: left;}
+.tyzy .con img:last-child{float: left;margin-left: 75px;margin-top: -50px;}
+.tyzy .rightBtn{position: absolute;right: 40px;top: 40px;animation: tada 1s infinite;}
+.zxkc{background: url(../images/xsxd_zxkc_bg.jpg) no-repeat center;background-size:cover;position: relative;height: 100%;display: flex;flex-direction: column;}
+.zxkc h1{font-size: 60px;text-align: center;color: #353535;font-family: 微软雅黑;margin-bottom: 40px;margin-top: 0;}
+.zxkc h1 span{color: #ff3912;}
+.zxkc ul{list-style: none;margin: 0;padding: 0;}
+.zxkc li{width: 290px;margin: 5px;float: left;font-family: 微软雅黑;position: relative;transition: background-size 1s;}
+.zxkc li img{width: 100%;border-radius: 5px;}
+.zxkc li .glyphicon{position: absolute;top: -20px;left: 110px;color: white;font-size: 70px;opacity: 0.8;}
+.zxkc li p{font-size: 20px;font-weight: bold;text-align: center;margin: 10px 0;}
+/*.zxkc li:nth-child(odd){background: url(../images/xsxd_zxkc_p1.jpg) no-repeat center;background-size: cover;}*/
+/*.zxkc li:nth-child(even){background: url(../images/xsxd_zxkc_p2.jpg) no-repeat center;background-size: cover;}*/
+.zxkc li a{color: black; text-decoration: none;position: relative;}
+.zxkc li .progress{width: 100%;margin: 3px auto 0;}
+.zxkc li .progress-bar{min-width: 35%;} 
+.zxkc li.disabled:after{content: "课程建设中...";width: 100%;height: 173px;position: absolute;left: 0;top: 0;background: rgba(0,0,0,0.7);text-align: center;color: white;font-family: 微软雅黑;font-size: 16px;line-height: 173px;}
+.zxkc .part{height: 100%;position: relative;}
+.zxkc .con{width: 1200px;position: absolute;left: 50%;margin-left: -600px;top: 50%;margin-top: -284px;}
+
+
+.videoBar{position: absolute;right: 0;bottom: 0;animation: videoBar 1s infinite alternate;}
+@keyframes videoBar{0%{transform: scale(1.0);}100%{transform: scale(1.1);}}
+@keyframes cloudLeft{0%{transform: translateX(120vw);}100%{transform: translateX(-20vw);}}
+footer{
+	background: #222;
+	padding: 20px 30px 10px;
+	color: #aaa;
+}

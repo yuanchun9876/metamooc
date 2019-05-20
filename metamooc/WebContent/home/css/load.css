@@ -1,0 +1,6 @@
+.load{position: fixed;z-index: 999;width: 100%;height: 100%;background: #deeaeb;display: flex;}
+.load .bar{width: 303px;padding: 30px 26px;background: white;border-radius: 100px;margin: auto;}
+.load .bar .progress{height: 9px;margin: 0;border: 1px solid #bdcacb;border-radius: 10px;overflow: initial;background: #deeaeb;}
+.load .bar .progress .progress-bar{position: relative;border: 1px solid #7efd21;background: linear-gradient(#dfffc5,#3edf19, #87f31a);height: 9px;border-radius: 10px;}
+.load .bar .progress .img{width: 74px;height: 36px;background: url(../images/load.png) no-repeat;position: absolute;right: -13px;top: -16px;animation: load 1.2s step-start infinite;}
+@keyframes load{0%{background-position: 0px -36px;}33%{background-position: 0px -72px;}66%{background-position: 0px -108px;}100%{background-position: 0px 0px;}}

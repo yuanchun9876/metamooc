@@ -1,0 +1,34 @@
+body{background: #fff4ec;}
+.nr{width: 1200px;margin: 0 auto;}
+.part1{background: url(../images/gzmq_bg1.jpg) no-repeat center top; height: 698px;}
+.part1>.nr>a{float: left;}
+.part1 img{padding-top: 32px;}
+.part1 p{color: black;padding-top: 55px;float: right;font-family: 微软雅黑;font-weight: bold;font-size: 16px;}
+.part1 p .glyphicon{margin: 5px;position: relative;top: 2px; color: #fd2011;}
+.part1 ul{list-style: none;padding: 50px 0 0 0px;margin: 0;float: left;}
+.part1 li{float: left;background: url(../images/xsxd_nav_bg.png) no-repeat;background-size: cover;font-family: 微软雅黑;font-weight: bold; width: 113px; height: 50px;text-align: center; padding-top: 23px;margin-left: 7px;}
+.part1 li a{color: #000000;text-decoration: none;}
+.part2{background: url(../images/gzmq_bg2.jpg) no-repeat center top; height: 594px;}
+.part3{background: url(../images/gzmq_bg3.jpg) no-repeat center top; height: 356px;}
+.part4{background: url(../images/gzmq_bg4.jpg) no-repeat center top; height: 677px;}
+.part5{background: url(../images/gzmq_bg5.jpg) no-repeat center top; height: 496px; margin-top: 75px;}
+.part6 h1{font-size: 40px; text-align: center; font-family: 微软雅黑; padding-top: 60px; padding-bottom: 20px;}
+.part6 h1 img{padding-right: 12px;}
+.part6 ul{list-style: none;padding: 0;margin: 0;}
+.part6 .video{margin: 0 75px;}
+.part6 .video li{width: 330px;float: left;margin: 0 10px;}
+.part6 .video video{width: 100%;}
+.part6 .bg{text-align: center;padding-top: 70px;}
+.part6 .tk{background: url(../images/gzmq_tk.png) no-repeat left; padding-left: 130px;margin: 65px 80px 44px;}
+.part6 .tk li{float: left;width: 138px;height: 58px;overflow: hidden;border:1px solid #d2cac1; margin-left: 10px;}
+.part6 .tk li:nth-child(1){margin-bottom: 10px;}
+.part6 .tk li:nth-child(2){margin-bottom: 10px;}
+.part6 .tk li:nth-child(3){margin-bottom: 10px;}
+.part6 .tk li:nth-child(4){margin-bottom: 10px;}
+.part6 .tk li:nth-child(5){margin-bottom: 10px;}
+.part6 .tk li:nth-child(6){margin-bottom: 10px;}
+footer{
+	background: #222;
+	padding: 20px 30px 10px;
+	color: #aaa;
+}
