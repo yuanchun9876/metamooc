@@ -1,0 +1,118 @@
+html{min-height: 100%;}
+body{background: #fff;user-select: none;-ms-user-select:none;overflow-x:hidden;width: 100%;min-height: 100%;position: absolute;display: flex;flex-direction: column;}
+.navbar{margin-bottom: 0;border-radius: 0;}
+.navbar .navbar-brand{height: auto;}
+.navbar .navbar-brand img{display: inline-block;}
+.navbar .navbar-brand span{display: inline-block;color: white;font-size: 30px;font-family: 微软雅黑;font-weight: bold;line-height: 30px;margin-left: 20px;position: relative;top: 5px;}
+.navbar .navbar-nav li{margin-top: 30px;}
+.navbar .navbar-nav li a{padding: 10px 15px;font-family: 微软雅黑;}
+.navbar .navbar-nav li.user{margin-top: 0;}
+.navbar .navbar-nav li.user a{padding: 15px;}
+.navbar .navbar-nav li.active a{color: #222;background: white;border-radius: 10px;}
+.navbar .user img{height: 54px;border-radius: 50%;float: left;}
+.navbar .user div{float: left;padding-left: 10px;}
+.navbar .user div>span{display: block;color: white;font-family: 微软雅黑;}
+.navbar .user div>span:first-child{font-size: 20px;padding-top: 10px;}
+.navbar .user div .glyphicon{color: #ffcc2f;}
+
+.menu{background: #333;display: flex;padding: 0 20px;}
+.menu .option{border-right: 1px solid #414141;border-left: 1px solid #292929;padding: 15px 10px 15px 30px;background: url(../images/user_menu_ico.png) no-repeat left;}
+.menu .option a{text-decoration: none;}
+.menu .option span{display: block;margin: 0;padding: 0;color: white;}
+.menu .option span:last-child{color: gray;font-size: 12px;}
+.menu .option:first-child{border: none;background: url(../images/user_menu_ico2.png) no-repeat right;padding: 15px 30px 15px 10px;}
+.menu .option:nth-child(3){border-left: none;}
+.menu .option:last-child{border-right: none;}
+.submenu{flex: 1;padding: 20px 10px;background: black;}
+.submenu a{color: white;text-decoration: none;margin: 0 10px;display: inline-block;padding-bottom: 3px;}
+.submenu a.active{border-bottom: 1px solid #ff602e;}
+.submenu .type1{display: inline-block;padding-right: 15px;padding-left: 10px;position: relative;}
+.submenu .type1 .more{position: absolute;top: 45px;background: rgba(0,0,0,0.8);width: 100%;padding: 20px;left: -10px;z-index: 1;border-radius: 0 0 5px 5px;display: none;}
+.submenu .type2{display: inline-block;border-right: 1px solid gray;padding-right: 15px;}
+.submenu .type2 input{margin: 0;position: relative;top: 2px;}
+.submenu .type2 span{color: white;margin-left: 5px;}
+.submenu form{display: inline-block;margin-left: 20px;}
+.submenu form input{border: none;border-radius: 100px;outline: none;padding: 0 25px 0 10px;height: 24px;}
+.submenu form button{margin-left: -30px;border: none;background: none;outline: none;}
+.main{list-style: none;margin: 0;padding: 50px;flex: 1;background: url(../images/bg.png) #333 no-repeat center;background-size: cover;}
+.main>.nav-tabs li{margin-bottom: 0;}
+.main>.nav-tabs a{color: white;background: rgba(0,0,0,0.5);}
+.main>.nav-tabs a:hover{color: black;}
+.main>.nav-tabs .active a{color: black;}
+.main>.nav-tabs .active a:hover{color: black;}
+.main .tab-content .pagination{margin-bottom: 5px;}
+.main .tab-content .pagination li a{color: gray;border: none;width: 34px;height: 34px;padding: 0;text-align: center;line-height: 34px;border-radius: 0;margin: 1px 1px 0 0;}
+.main .tab-content .pagination li.green a{background: #7dcf3b;color: white;}
+.main .tab-content .pagination li.red a{background: #ff602e;color: white;}
+.main .tab-content .pagination li.blue a{background: #4bb7ec;color: white;}
+.main .tab-content .pagination li.red:hover a{background: #e55629;}
+.main .tab-content .pagination li.green:hover a{background: #70ba35;}
+.main .tab-content .pagination li.blue:hover a{background: #43a4d4;}
+.main .tab-content .exercises{background: rgba(0,0,0,0.8);cursor: default;padding: 20px;border-radius: 5px;position: relative;min-height: 280px;}
+.main .tab-content .exercises>ul{list-style: none;margin: 0 110px 60px 0;padding: 0;color: white;}
+.main .tab-content .exercises>ul>li{display: none;}
+.main .tab-content .exercises>ul>li.active{display: block;}
+.main .tab-content .exercises>ul ul{list-style: none;margin: 0;padding: 0;}
+.main .tab-content .exercises>ul li li{margin-bottom: 5px;}
+.main .tab-content .exercises>ul li li input{margin: 0 5px 0 0;position: relative;top: 2px;}
+.main .tab-content .exercises h1{font-size: 14px;line-height: 1.6em;color: white;margin: 0 0 10px;}
+.main .tab-content .exercises .label{position: absolute;left: 20px;bottom: 20px;font-weight: normal;font-family: 微软雅黑;font-size: 12px;padding: 0;}
+.main .tab-content .exercises .label span{background: #ff602e;border-radius: 3px;display: inline-block;padding: 3px 7px;}
+.main .tab-content .exercises .page{position: absolute;right: 20px;bottom: 20px;}
+.main .tab-content .exercises .page button{border-radius: 5px;border: none;background: #ff602e;color: white;padding: 5px 14px;}
+.main .tab-content .exercises .page button.disabled{background: gray;cursor: default;}
+.main .tab-content .exercises .page .num{color: white;margin: 0 10px;font-size: 18px;font-weight: bold;}
+.main .tab-content .exercises .tools{position: absolute;right: -8px;top: 20px;}
+.main .tab-content .exercises .tools>span{display: block;color: white;background: url(../images/user_question_tools.png) no-repeat;width: 110px;height: 46px;padding: 15px 0 0 15px;cursor: pointer;}
+.main .tab-content .exercises .tools .fa{background: black;padding: 5px;border-radius: 50%;color: #ff602e;margin-right: 5px;}
+.main .tab-content .note{background: rgba(0,0,0,0.8);cursor: default;padding: 20px;border-radius: 5px;margin-top: 10px;}
+.main .tab-content .note h1{font-family: 微软雅黑;color: white;font-weight: normal;color: #ff602e;font-size: 18px;margin: 0 0 10px;}
+.main .tab-content .note p{font-family: 微软雅黑;color: white;font-weight: normal;margin: 0;}
+
+.modal-title{font-family: 微软雅黑;}
+#myModal2 .modal-dialog{width: 1200px;}
+#myModal2 .modal-body{display: flex;height: 518px;}
+#myModal2 .modal-body .video{width: 868px;}
+#myModal2 .modal-body .modal-mate{list-style: none;padding: 0;margin: 0;flex: 1;background: #eee;overflow: hidden;padding: 20px;margin-left: 10px;border-radius: 0 5px 5px 0;}
+#myModal2 .modal-body .modal-mate>ul{width: 100%;}
+#myModal2 .modal-body .modal-mate>ul>li{border-bottom: 1px solid #ff602e;padding-top: 10px;}
+#myModal2 .modal-body .modal-mate>ul>li:last-child{border-bottom: none;}
+#myModal2 .modal-body .modal-mate h1{margin: 0;font-size: 20px;font-family: 微软雅黑;color: black;cursor: default;}
+#myModal2 .modal-body .modal-mate li ul{padding: 5px 0;}
+#myModal2 .modal-body .modal-mate li ul li{padding: 5px 20px;border-radius: 5px;transition: background .5s;}
+#myModal2 .modal-body .modal-mate li ul li:hover{background: #ff602e;}
+#myModal2 .modal-body .modal-mate li ul li:hover a{color: white;}
+#myModal2 .modal-body .modal-mate li ul li a{color: #555;text-decoration: none;display: block;outline: none;}
+#myModal2 .modal-body .modal-mate .badge{background: #ff602e;border-radius: 3px;font-size: 12px;margin-left: 5px;transition: background .5s;}
+#myModal2 .modal-body .modal-mate li ul li:hover .badge{background: rgba(255,255,255,0.2);}
+#myModal3 .modal-body{min-height: 300px;display: flex;flex-direction: column;}
+#myModal3 .modal-body .label{padding:0;font-family: 微软雅黑;font-weight: normal;white-space: normal;cursor: default;height: 100%;flex: 1;text-align: left;}
+#myModal3 .modal-body .label>span{background: #333;padding: 5px 10px;border-radius: 3px;font-size: 14px;display: inline-block;margin-bottom: 4px;}
+#myModal3 .modal-body .label .fa{padding-left: 5px;color: #aaa;cursor: pointer;}
+#myModal3 .modal-body .label .fa:hover{color: #ddd;}
+#myModal3 .modal-body form{margin-top: 10px;display: flex;}
+#myModal3 .modal-body form input{padding: 5px 10px;border: none;width: 100%;background: #eee;border-radius: 5px 0 0 5px;outline: none;}
+#myModal3 .modal-body form button{border: none;background: #ff602e;color: white;width: 32px;outline: none;border-radius: 0 5px 5px 0;}
+#myModal3 .modal-body form button:hover{background: #e55629;}
+#myModal4 .modal-body form textarea{width: 100%;display: block;margin-bottom: 10px;resize:none;padding: 10px;min-height: 300px;border: 1px solid #ccc;border-radius: 5px;}
+#myModal4 .modal-body form button{border: none;background: #ff602e;color: white;width: 132px;outline: none;border-radius: 5px;margin: 0 auto;display: block;padding: 5px 0;}
+#myModal4 .modal-body form button:hover{background: #e55629;}
+
+footer{
+	background: #222;
+	padding: 20px 30px 10px;
+	color: #aaa;
+}
+
+
+
+@keyframes slideInRight{
+	0%{transform: translate(200px,0);opacity: 0;}
+	100%{transform: translate(0,0);opacity: 1;}
+}
+
+
+@media screen and (max-width: 1200px) {
+	.main .tab-content li{width: 25%;}
+}
+

@@ -1,0 +1,171 @@
+body{background: #fff;user-select: none;-ms-user-select:none;overflow-x:hidden;}
+.navbar{margin-bottom: 0;border-radius: 0;}
+.navbar .navbar-brand{height: auto;}
+.navbar .navbar-brand img{display: inline-block;}
+.navbar .navbar-brand span{display: inline-block;color: white;font-size: 30px;font-family: 微软雅黑;font-weight: bold;line-height: 30px;margin-left: 20px;position: relative;top: 5px;}
+.navbar .navbar-nav li{margin-top: 30px;}
+.navbar .navbar-nav li a{padding: 10px 15px;font-family: 微软雅黑;}
+.navbar .navbar-nav li.user{margin-top: 0;}
+.navbar .navbar-nav li.user a{padding: 15px;}
+.navbar .navbar-nav li.active a{color: #222;background: white;border-radius: 10px;}
+.navbar .user img{height: 54px;border-radius: 50%;float: left;}
+.navbar .user div{float: left;padding-left: 10px;}
+.navbar .user div>span{display: block;color: white;font-family: 微软雅黑;}
+.navbar .user div>span:first-child{font-size: 20px;padding-top: 10px;}
+.navbar .user div .glyphicon{color: #ffcc2f;}
+
+.main{display: flex;position: relative;}
+.leftBar{width: 300px;min-width: 165px;background: #333;position: relative;padding: 20px;}
+.leftBar>h1{color: white;font-family: 微软雅黑;font-size: 20px;margin:0;padding-bottom:5px;border-bottom: 1px solid gray;white-space: nowrap;overflow: hidden;cursor: default;}
+.leftBar>h1 img{margin-right: 10px;}
+.leftBar>h1 small{margin-left: 5px;color: #ccc;}
+.leftBar .search{padding: 10px 0;}
+.leftBar .search form{display: flex;border: none;box-shadow: none;}
+.leftBar .search form input{width: 100%;border: none;border-radius: 100px 0 0 100px;background: #eee;padding: 0 10px;}
+.leftBar .search form input:focus{outline:none; }
+.leftBar .search form button{border: none;border-radius: 0 100px 100px 0;background: #ff602e;color: #ffd2c4;outline:none; }
+.leftBar ul{list-style: none;margin: 0;padding: 0;}
+.leftBar ul li{background: #444;margin-bottom: 5px;padding: 5px 10px;display: flex;border-radius: 3px;transition: background .5s;}
+.leftBar ul li .pro{width: 10px;margin-right: 10px;}
+.leftBar ul li a{display: block;color: #ccc;text-decoration: none;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;width: 100%;}
+.leftBar ul li.active{background: #ff602e;}
+.leftBar ul li:hover{background: #ff602e;}
+.leftBar ul li.active a{color: white;}
+.leftBar ul li:hover a{color: white;}
+.leftBar .drag{position: absolute;right: 0;top: 0;width: 10px;height: 100%;cursor: col-resize;display: flex;align-items: center;}
+.leftBar .drag span{display: block;border-left:1px solid #aaa;border-right:1px solid #aaa;width: 5px;height: 50px;}
+.videoMain{flex: 1;padding:10px;width: 300px;}
+.videoMain .bread{background: #333;margin-bottom: 10px;padding: 8px 15px;border-radius: 5px;display: flex;position: relative;z-index: 10;}
+.videoMain .bread .swiper-container{flex: 1;}
+.videoMain .bread .swiper-button-prev{position: initial;width: auto;height: auto;background: none;margin: 0 10px 0 0;color: white;}
+.videoMain .bread .swiper-button-prev:focus{outline: none;}
+.videoMain .bread .swiper-button-next{position: initial;width: auto;height: auto;background: none;margin: 0 0 0 10px;color: white;}
+.videoMain .bread .swiper-button-next:focus{outline: none;}
+.videoMain .breadcrumb{background: none;padding: 0;}
+.videoMain .breadcrumb li{width: auto;color: #ff602e;font-weight: bold;cursor: default;}
+.videoMain .breadcrumb li:before{content: "\f061";font: normal normal normal 14px/1 FontAwesome;color: #ff602e;}
+.videoMain .breadcrumb li:first-child:before{content:none;}
+.videoMain .breadcrumb li a{color: #9d9d9d;font-weight: normal;}
+.videoMain .breadcrumb li a:hover{color: white;text-decoration: none;}
+.videoMain .video{position: relative;}
+.videoMain .video *:focus{outline: none;}
+.videoMain .video .video-js{width: 100%;height: 100%;padding: 0;}
+.videoMain .video .vjs-poster{background-color: initial;}
+.rightBar{background: #333;display: flex;align-items:center;z-index: 21;}
+.rightBar ul{list-style: none;margin: 0;padding: 0;}
+.rightBar ul li.active{background: rgba(0,0,0,0.3);}
+.rightBar ul li:hover{background: rgba(0,0,0,0.3);}
+.rightBar ul li.active a{color: white;}
+.rightBar ul li:hover a{color: white;}
+.rightBar ul li a{display: block;padding: 10px 15px;text-align: center;color: #9d9d9d;text-decoration: none;font-family: 微软雅黑;}
+.rightBar ul li a .fa{display: block;color: #ff602e;}
+.rightMenu{position: absolute;z-index: 9;width: 300px;height: 100%;top: 0;right: 0px;padding: 20px;background: rgba(0,0,0,0.85);border-left: 1px solid rgba(255,255,255,0.1);transition: transform .5s,opacity .5s;opacity: 0;}
+.rightMenu.active{transform: translate(-58px);opacity: 1;z-index: 20;}
+.rightMenu ul{list-style: none;margin: 0;padding: 0;}
+.rightMenu>div{display: none;}
+.rightMenu>div.active{display: block;}
+.rightMenu>.fa{position: absolute;right: 10px;top: 10px;cursor: pointer;color: #ccc;}
+.rightMenu .mate>ul{height: 500px;width: 100%;}
+.rightMenu .mate>ul>li{border-bottom: 1px solid #ff602e;padding-top: 10px;}
+.rightMenu .mate>ul>li:last-child{border-bottom: none;}
+.rightMenu .mate h1{margin: 0;font-size: 20px;font-family: 微软雅黑;color: white;cursor: default;}
+.rightMenu .mate li ul{padding: 5px 0;}
+.rightMenu .mate li ul li{padding: 5px 20px;border-radius: 5px;transition: background .5s;}
+.rightMenu .mate li ul li:hover{background: #ff602e;}
+.rightMenu .mate li ul li:hover a{color: white;}
+.rightMenu .mate li ul li a{color: #ccc;text-decoration: none;display: block;outline: none;}
+.rightMenu .badge{background: #ff602e;border-radius: 3px;font-size: 12px;margin-left: 5px;transition: background .5s;}
+.rightMenu li ul li:hover .badge{background: rgba(255,255,255,0.2);}
+.rightMenu .note.active{display: flex;flex-direction: column;height: 100%;}
+.rightMenu .note .con{color: white;transition: height .5s;}
+.rightMenu .note .con li{padding-left: 30px;margin-bottom: 10px;}
+.rightMenu .note .con li p{padding: 5px 10px; border-radius: 5px;margin: 0;background: #4c4c4c;border: 1px solid #5d5d5d;font-size: 12px;line-height: 1.6em;}
+.rightMenu .note .con li p.teacher{margin-top: 5px;}
+.rightMenu .note .con li p.teacher>span{color: #c0ff92;}
+.rightMenu .note .con li .ico{padding-top: 5px;color: #ff602e;}
+.rightMenu .note .con li .time{float: left;cursor: pointer;}
+.rightMenu .note .con li .time .fa{margin-right: 5px;}
+.rightMenu .note .con li .ico>.fa{margin-left: 5px;float: right;cursor: pointer;}
+.rightMenu .note .con li.ask{background: url(../images/note_ico1.png) no-repeat left 7px;}
+.rightMenu .note .con li.gain{background: url(../images/note_ico2.png) no-repeat left 7px;}
+.rightMenu .note .con li.help{background: url(../images/note_ico3.png) no-repeat left 7px;}
+.rightMenu .note form{padding-top: 10px;display: flex;flex-direction: column;flex: 1;}
+#editor{display: flex;flex: 1;}
+#edui1{display: flex;flex-direction: column;}
+#edui1_iframeholder{flex: 1;}
+.rightMenu .note .button{display: flex;padding-top: 10px;}
+.rightMenu .note .button button{flex: 1;border: none;background: #ff602e;border-radius: 5px;color: white;padding: 5px 0;font-size: 14px;font-family: 微软雅黑;}
+.rightMenu .note .button button:first-child{margin-right: 10px;}
+.rightMenu .download>ul{height: 500px;width: 100%;}
+.rightMenu .download>ul>li{border-bottom: 1px solid #ff602e;padding-top: 10px;}
+.rightMenu .download>ul>li:last-child{border-bottom: none;}
+.rightMenu .download h1{margin: 0;font-size: 20px;font-family: 微软雅黑;color: white;cursor: default;}
+.rightMenu .download li ul{padding: 5px 0;}
+.rightMenu .download li ul li{padding: 5px 20px;border-radius: 5px;transition: background .5s;}
+.rightMenu .download li ul li:hover{background: #ff602e;}
+.rightMenu .download li ul li:hover a{color: white;}
+.rightMenu .download li ul li a{color: #ccc;text-decoration: none;display: block;}
+.rightMenu .download li ul li .fa-download{color: #ff602e;margin-left: 5px;}
+.rightMenu .download li ul li:hover .fa-download{color: white;}
+.rightMenu .test.active{display: flex;flex-direction: column;height: 100%;}
+.rightMenu .test>.pagination li a{color: gray;border: 1px solid black;margin-top: -1px;width: 34px;height: 34px;padding: 0;text-align: center;line-height: 34px;border-radius: 0;}
+.rightMenu .test>.pagination li:nth-child(7n) a{border-radius: 0 5px 5px 0;}
+.rightMenu .test>.pagination li:nth-child(7n+1) a{border-radius: 5px 0 0 5px;margin-left: 0;}
+.rightMenu .test>.pagination li.green a{background: #7dcf3b;color: white;}
+.rightMenu .test>.pagination li.red a{background: #ff602e;color: white;}
+.rightMenu .test>.pagination li.blue a{background: #4bb7ec;color: white;}
+.rightMenu .test>.pagination li.red:hover a{background: #e55629;}
+.rightMenu .test>.pagination li.green:hover a{background: #70ba35;}
+.rightMenu .test>.pagination li.blue:hover a{background: #43a4d4;}
+.rightMenu .test .exercises{color: white;flex: 1;border-bottom: 1px solid #4b4b4b;margin-bottom: 10px;cursor: default;}
+.rightMenu .test .exercises>li{display: none;}
+.rightMenu .test .exercises>li.active{display: block;}
+.rightMenu .test .exercises>li .submit{border: none;border-radius: 3px;background: #ff602e;padding: 2px 10px;margin-top: 10px;}
+.rightMenu .test .exercises>li .submit:focus{outline: none;}
+.rightMenu .test .exercises>li li{margin-bottom: 5px;}
+.rightMenu .test .exercises>li li input{margin: 0 5px 0 0;position: relative;top: 2px;}
+.rightMenu .test .exercises h1{font-size: 14px;line-height: 1.6em;}
+.rightMenu .test .button .answer{padding-bottom: 10px;display: none;}
+.rightMenu .test .button .answer>span{color: white;padding-right: 10px;cursor: default;display: block;}
+.rightMenu .test .button .answer a{color: #4bb7ec;margin-right: 10px;}
+.rightMenu .test .button .answer a>.fa{margin-right: 3px;}
+.rightMenu .test .button .pager .page{color: white;font-size: 20px;font-weight: bold;padding: 0 10px;}
+.rightMenu .test .button .pager a{border-radius: 5px;border: none;background: #ff602e;color: white;}
+.rightMenu .test .button .pager a:hover{background: #e55629;}
+.rightMenu .test .button .pager a.disabled{background: gray;cursor: default;}
+.rightMenu .test .button .pager a.disabled:hover{background: gray;}
+.rightMenu .imageText p{color: #ccc;text-indent: 2em;margin-top: 10px;font-size: 12px;line-height: 1.6em;}
+.rightMenu .imageText img{width: 100%;margin-top: 10px;display: block;}
+.rightMenu .label.active{display: flex;flex-direction: column;height: 100%;}
+.rightMenu .label .aleady{white-space: normal;text-align: left;flex: 1;border-bottom: 1px solid #4b4b4b;margin-bottom: 10px;}
+.rightMenu .label .aleady li{display: inline-block;margin-right: 10px;margin-bottom: 10px;}
+.rightMenu .label .aleady li .txt{font-weight: normal;display: inline-block;padding: 5px;border-radius: 3px;background: #ff602e;cursor: default;}
+.rightMenu .label .aleady li .fa{font-weight: normal;margin-left: 3px;cursor: pointer;}
+.rightMenu .label .mod{white-space: normal;text-align: left;}
+.rightMenu .label .mod li{display: inline-block;margin-right: 10px;margin-bottom: 10px;}
+.rightMenu .label .mod li .txt{font-weight: normal;display: inline-block;padding: 5px;border-radius: 3px;background: #ff602e;cursor: pointer;}
+.rightMenu .label .mod li .fa{font-weight: normal;margin-left: 3px;cursor: pointer;}
+.rightMenu .label form{display: flex;}
+.rightMenu .label form button{border: none;background: #ff602e;padding: 5px 7px; border-radius: 0 3px 3px 0;}
+.rightMenu .label form input{flex: 1;border: none; border-radius: 3px 0 0 3px;color: black;padding: 3px 5px;font-weight: normal;}
+.rightMenu .label form *:focus{outline: none;}
+.rightMenu .help.active{height: 100%;}
+.rightMenu .help li{margin-bottom: 20px;color: white;display: flex;}
+.rightMenu .help li .head{width: 25px;height: 25px;border-radius: 50%;background: center;background-size: 100%;margin-right: 5px;margin-top: 3px;}
+.rightMenu .help li .con{flex: 1;}
+.rightMenu .help li p{padding: 5px 10px; border-radius: 5px;margin: 0;background: #4c4c4c;border: 1px solid #5d5d5d;font-size: 12px;line-height: 1.6em;}
+.rightMenu .help li p.teacher{margin-top: 5px;}
+.rightMenu .help li p.teacher>span{color: #c0ff92;}
+
+footer{
+	background: #222;
+	padding: 20px 30px 10px;
+	color: #aaa;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+	.navbar .navbar-nav li{margin-top: 0px;}
+}

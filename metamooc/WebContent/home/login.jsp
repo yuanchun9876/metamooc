@@ -37,7 +37,7 @@
 					break;
 				}
 			%>
-			<form action="<%=src%>/video.jsp" method="post">
+			<form action="<%=request.getContextPath()%>/classroom/login.action" method="post">
 				<img src="images/ewm2.jpg" alt="">
 				<p>学习邀请码:</p>
 				<input type="text" name="yqm" placeholder="请输入扫码后获得的邀请码">

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="js/isPhone.js"></script>
+	<meta charset="UTF-8">
+	<title>图灵云教育|Meta在线课堂|校园招聘特训营</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="keywords" content="图灵云教育，Meta，在线教育，JavaSE，JavaWeb，大数据，Python，校园招聘，turingedu.com，turingmeta.com，校招笔试题">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/video-js.min.css">
+	<link rel="stylesheet" href="css/swiper-4.2.6.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/user_question_con.css">
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/video.min.js"></script>
+	<script src="js/videojs-ie8.min.js"></script>
+	<script type="text/javascript">
+		videojs.options.flash.swf = "js/video-js.swf";
+	</script>
+	<script src="js/swiper-4.2.6.min.js"></script>
+	<script src="js/swiper.animate1.0.3.min.js"></script>
+	<script src="js/echarts.min.js"></script>
+	<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+</head>
+<body onselectstart="return false;">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="images/video_logo.png" alt="">
+					<span>学习者驾驶舱</span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">课堂讲授</a></li>
+					<li><a href="#">知识体系</a></li>
+					<li><a href="#">测评驱动</a></li>
+					<li class="user">
+						<a href="#" class="clearfix">
+							<img src="images/user.png" alt="">
+							<div>
+								<span>张同学</span>
+								<span><span class="glyphicon glyphicon-star"></span>积分：1785</span>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="menu">
+		<div class="option"><a href="user_question.html"><span>我的题</span><span>EXERCISES</span></a></div>
+		<div class="submenu">
+			<div class="type1">
+				<a href="#" class="active">错题</a>
+				<a href="#">收藏</a>
+				<a href="#">A标签</a>
+				<a href="#">B标签</a>
+				<a href="#">C标签</a>
+				<a href="#" class="moreButton">更多</a>
+				<div class="more">
+					<a href="#">可怕</a>
+					<a href="#">猜测</a>
+					<a href="#">必要的</a>
+					<a href="#">下级</a>
+					<a href="#">贸易制裁</a>
+					<a href="#">向下拉</a>
+					<a href="#">记忆</a>
+					<a href="#">摘录</a>
+					<a href="#">深思熟虑</a>
+					<a href="#">悲伤的</a>
+				</div>
+			</div>
+			<div class="type2">
+				<input type="checkbox"><span>只看笔记</span>
+			</div>
+			<form action="">
+				<input type="text" placeholder="搜索题目或笔记">
+				<button><span class="fa fa-search"></span></button>	
+			</form>
+		</div>
+		<div class="option"><a href="user_note.html"><span>笔记</span><span>NOTE</span></a></div>
+		<div class="option"><a href="user_label.html"><span>标签</span><span>LABEL</span></a></div>
+		<div class="option"><a href="user_set.html"><span>设置</span><span>SET</span></a></div>
+	</div>
+	<div class="main">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="#D1" data-toggle="tab">Javase</a></li>
+			<li><a href="#D2" data-toggle="tab">数据库</a></li>
+			<li><a href="#D3" data-toggle="tab">Web</a></li>
+			<li><a href="#D4" data-toggle="tab">算法</a></li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane active" id="D1">
+				<ul class="pagination">
+					<li><a href="#">1</a></li>
+					<li class="green"><a href="#">2</a></li>
+					<li class="green"><a href="#">3</a></li>
+					<li class="red"><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+				</ul>
+				<div class="exercises">
+					<ul>
+						<li class="active" data-answer="能存储对象数据">
+							<h1>1、题目：反射机制其实就是指程序，java的变量理解正确的是____</h1>
+							<ul>
+								<!-- <li><input type="radio" name="test0"><span>A:<img src="images/exercises_test1.jpg" alt=""></span></li> -->
+								<li><input type="radio" name="test0"><span>A:上一个变量</span></li>
+								<li><input type="radio" name="test0"><span>B:一个自定义的名字</span></li>
+								<li><input type="radio" name="test0"><span>C:随便写点啥信息文字凑字符字符特别多了会换行</span></li>
+								<li><input type="radio" name="test0"><span>D:能存储对象数据</span></li>
+							</ul>
+						</li>
+						<li data-answer="推uierte|尔特人">
+							<h1>2、题目：java的变量理解正确的是____</h1>
+							<ul>
+								<li><input type="checkbox" name="test1"><span>A:阿三地方记</span></li>
+								<li><input type="checkbox" name="test1"><span>B:尔特人</span></li>
+								<li><input type="checkbox" name="test1"><span>C:推uierte</span></li>
+								<li><input type="checkbox" name="test1"><span>D:阿三温热引用地方记</span></li>
+							</ul>
+							<button class="submit">确定</button>
+						</li>
+						<li data-answer="阿三是的非官方地方记">
+							<h1>3、题目：java的变量理解正确的是____</h1>
+							<ul>
+								<li><input type="radio" name="test2"><span>A:适当的放松</span></li>
+								<li><input type="radio" name="test2"><span>B:阿三是的非官方地方记</span></li>
+								<li><input type="radio" name="test2"><span>C:收购华盛顿</span></li>
+								<li><input type="radio" name="test2"><span>D:获得丰厚的</span></li>
+							</ul>
+							<button class="submit">确定</button>
+						</li>
+						<li data-answer="收到好多好多好">
+							<h1>4、题目：java的变量理解正确的是____</h1>
+							<ul>
+								<li><input type="radio" name="test3"><span>A:收到好多好多好</span></li>
+								<li><input type="radio" name="test3"><span>B:胜多负少士大夫</span></li>
+								<li><input type="radio" name="test3"><span>C:似的发射点发射点</span></li>
+								<li><input type="radio" name="test3"><span>D:去啊分</span></li>
+							</ul>
+							<button class="submit">确定</button>
+						</li>
+						<li data-answer="尔特">
+							<h1>5、题目：java的变量理解正确的是____</h1>
+							<ul>
+								<li><input type="radio" name="test4"><span>A:阿三交换机地方记</span></li>
+								<li><input type="radio" name="test4"><span>B:大范甘迪</span></li>
+								<li><input type="radio" name="test4"><span>C:尔特人</span></li>
+								<li><input type="radio" name="test4"><span>D:尔特</span></li>
+							</ul>
+							<button class="submit">确定</button>
+						</li>
+						<li data-answer="问题问题">
+							<h1>6、题目：java的变量理解正确的是____</h1>
+							<ul>
+								<li><input type="radio" name="test5"><span>A:与</span></li>
+								<li><input type="radio" name="test5"><span>B:委任为惹我</span></li>
+								<li><input type="radio" name="test5"><span>C:问题问题</span></li>
+								<li><input type="radio" name="test5"><span>D:微软</span></li>
+							</ul>
+							<button class="submit">确定</button>
+						</li>
+					</ul>
+					<div class="label">
+						<span>标签A</span>
+						<span>标签B</span>
+						<span>标签C</span>
+					</div>
+					<div class="page"><button class="prev disabled">上一题</button><span class="num">1</span><button class="next">下一题</button></div>
+					<div class="tools">
+						<span data-toggle="modal" data-target="#myModal1"><span class="fa fa-caret-square-o-right"></span>解析视频</span>
+						<span data-toggle="modal" data-target="#myModal2"><span class="fa fa-list-alt"></span>匹配知识</span>
+						<span data-toggle="modal" data-target="#myModal3"><span class="fa fa-tag"></span>考题标签</span>
+						<span data-toggle="modal" data-target="#myModal4"><span class="fa fa-edit"></span>我的笔记</span>
+					</div>
+				</div>
+				<div class="note">
+					<h1>我的笔记：</h1>
+					<p>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。Java语言作为静态面向对象编程语言的代表，极好地实现了面向对象理论，允许程序员以优雅的思维方式进行复杂的编程。Java具有简单性、面向对象、分布式、健壮性、安全性、平台独立与可移植性、多线程、动态性等特点 [2]  。Java可以编写桌面应用程序、Web应用程序、分布式系统和嵌入式系统应用程序等。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="text-center">
+		<p>版权所有 Copyright© 2001-2018 turingmeta.com,All Rights Reserved 哈尔滨今日灵图职业培训学校 地址:黑龙江省哈尔滨市南岗区西大直街318号六、七楼</p>
+	</footer>
+
+
+
+	<!-- 模态窗 -->
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center">变量基本概念</h4>
+				</div>
+				<div class="modal-body">
+					<video src="video/ceshi.mp4" width="1920" height="1080" id="V1" class="video-js vjs-default-skin videoCentered vjs-big-play-centered" preload poster="video/ceshi.jpg"></video>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal2">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center">匹配知识</h4>
+				</div>
+				<div class="modal-body">
+					<div class="video">
+						<video src="video/ceshi.mp4" width="1920" height="1080" id="V2" class="video-js vjs-default-skin videoCentered vjs-big-play-centered" preload poster="video/ceshi.jpg"></video>
+					</div>
+					<ul class="modal-mate">
+						<li>
+							<h1>变量</h1>
+							<ul>
+								<li><a href="#">变量基本概念</a></li>
+							</ul>
+						</li>
+						<li>
+							<h1>运算符与表达式</h1>
+							<ul>
+								<li><a href="">算术运算</a></li>
+								<li><a href="">逻辑运算</a></li>
+								<li><a href="">关系运算</a></li>
+							</ul>
+						</li>
+						<li>
+							<h1>流程结构</h1>
+							<ul>
+								<li><a href="#">顺序结构<span class="badge">重要</span></a></li>
+								<li><a href="">选择结构<span class="badge">重要</span></a></li>
+								<li><a href="">循环结构<span class="badge">重要</span></a></li>
+								<li><a href="">如果万一要是有特别多海量的文字的时候该怎么办呢<span class="badge">重要</span></a></li>
+								<li><a href="">可能只有一些<span class="badge">重要</span></a></li>
+								<li><a href="">也有长字符串的时候<span class="badge">重要</span></a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+								<li><a href="">条数多了加滚动条</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal3">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center">考题标签</h4>
+				</div>
+				<div class="modal-body">
+					<div class="label">
+						<span>标签A<span class="fa fa-close"></span></span>
+						<span>标签B<span class="fa fa-close"></span></span>
+						<span>标签C<span class="fa fa-close"></span></span>
+						<span>长短不一<span class="fa fa-close"></span></span>
+						<span>条数多了<span class="fa fa-close"></span></span>
+						<span>标签C<span class="fa fa-close"></span></span>
+						<span>数多了加滚<span class="fa fa-close"></span></span>
+						<span>四个字的<span class="fa fa-close"></span></span>
+						<span>三个字<span class="fa fa-close"></span></span>
+						<span>标签A<span class="fa fa-close"></span></span>
+						<span>标签B<span class="fa fa-close"></span></span>
+						<span>标签C<span class="fa fa-close"></span></span>
+					</div>
+					<form action="">
+						<input type="text">
+						<button><span class="fa fa-plus"></span></button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" tabindex="-1" role="dialog" id="myModal4">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title text-center">我的笔记</h4>
+				</div>
+				<div class="modal-body">
+					<form action="">
+						<textarea name=""></textarea>
+						<button>保存笔记</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		var player1 = videojs("V1", {
+			fluid: true,
+			"controls": true,
+			"autoplay": false,
+			"preload": "auto",
+			"loop": false,
+			controlBar: {
+				captionsButton: false,
+				chaptersButton: false,
+				playbackRateMenuButton: true,
+				LiveDisplay: true,
+				subtitlesButton: false,
+				remainingTimeDisplay: true,
+				progressControl: true,
+				volumeMenuButton: {
+					inline: false,
+					vertical: true
+				},//竖着的音量条
+				fullscreenToggle: true
+			}
+		}, 
+		function () {
+			/*次处用于自定义控制条等*/
+		});
+		
+		var player2 = videojs("V2", {
+			fluid: true,
+			"controls": true,
+			"autoplay": false,
+			"preload": "auto",
+			"loop": false,
+			controlBar: {
+				captionsButton: false,
+				chaptersButton: false,
+				playbackRateMenuButton: true,
+				LiveDisplay: true,
+				subtitlesButton: false,
+				remainingTimeDisplay: true,
+				progressControl: true,
+				volumeMenuButton: {
+					inline: false,
+					vertical: true
+				},//竖着的音量条
+				fullscreenToggle: true
+			}
+		}, 
+		function () {
+			/*次处用于自定义控制条等*/
+		});
+		
+
+		
+
+
+
+
+
+
+		//菜单切换
+		$(".submenu a:not(.moreButton)").click(function(){
+			$(".submenu a").removeClass("active");
+			$(this).addClass("active");
+			$(".submenu .more").css("display","none");
+		})
+		$(".submenu .moreButton").click(function(){
+			$(".submenu .more").css("display","block");
+		})
+
+		
+
+		//模态窗
+		$('#myModal2').on('shown.bs.modal', function (e) {
+			if(!$(".modal-mate").hasClass("mCustomScrollbar")){
+				$(".modal-mate").mCustomScrollbar({
+					scrollInertia:150
+				});
+			}	
+		})
+
+
+		
+	</script>
+</body>
+</html>

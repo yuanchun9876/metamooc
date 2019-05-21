@@ -1,0 +1,96 @@
+html{min-height: 100%;}
+body{background: #fff;user-select: none;-ms-user-select:none;overflow-x:hidden;width: 100%;min-height: 100%;position: absolute;display: flex;flex-direction: column;}
+.navbar{margin-bottom: 0;border-radius: 0;}
+.navbar .navbar-brand{height: auto;}
+.navbar .navbar-brand img{display: inline-block;}
+.navbar .navbar-brand span{display: inline-block;color: white;font-size: 30px;font-family: 微软雅黑;font-weight: bold;line-height: 30px;margin-left: 20px;position: relative;top: 5px;}
+.navbar .navbar-nav li{margin-top: 30px;}
+.navbar .navbar-nav li a{padding: 10px 15px;font-family: 微软雅黑;}
+.navbar .navbar-nav li.user{margin-top: 0;}
+.navbar .navbar-nav li.user a{padding: 15px;}
+.navbar .navbar-nav li.active a{color: #222;background: white;border-radius: 10px;}
+.navbar .user img{height: 54px;border-radius: 50%;float: left;}
+.navbar .user div{float: left;padding-left: 10px;}
+.navbar .user div>span{display: block;color: white;font-family: 微软雅黑;}
+.navbar .user div>span:first-child{font-size: 20px;padding-top: 10px;}
+.navbar .user div .glyphicon{color: #ffcc2f;}
+
+.menu{background: #333;display: flex;padding: 0 20px;}
+.menu .option{border-right: 1px solid #414141;border-left: 1px solid #292929;padding: 15px 10px 15px 30px;background: url(../images/user_menu_ico.png) no-repeat left;}
+.menu .option a{text-decoration: none;}
+.menu .option span{display: block;margin: 0;padding: 0;color: white;}
+.menu .option span:last-child{color: gray;font-size: 12px;}
+.menu .option:first-child{border: none;background: url(../images/user_menu_ico2.png) no-repeat right;padding: 15px 30px 15px 10px;}
+.menu .option:nth-child(3){border-left: none;}
+.menu .option:last-child{border-right: none;}
+.submenu{flex: 1;padding: 20px 10px;background: black;}
+.submenu a{color: white;text-decoration: none;margin: 0 10px;display: inline-block;padding-bottom: 3px;}
+.submenu a.active{border-bottom: 1px solid #ff602e;}
+
+.main{list-style: none;margin: 0;padding: 20px;flex: 1;display: flex;background: url(../images/bg.png) #333 no-repeat center;background-size: cover;}
+.main>li{width: 100%;margin: auto;display: none;}
+.main>li.active{display: block;animation: slideInRight .5s;}
+.main .basic{padding-top: 30px;}
+.main .basic form{background: #333;padding: 20px 35px 20px;border-radius: 5px;position: relative;width: 700px;margin: 0 auto;}
+.main .basic form>.row{background: #fff;border-radius: 5px;padding: 20px;}
+.main .basic form .ico{position: absolute;top: -30px;left: 50%;margin-left: -56px;}
+.main .basic form>h1{margin: 10px 0;color: white;font-family: 微软雅黑;font-size: 24px;text-align: center;}
+.main .basic table{width: 100%;}
+.main .basic table td{padding: 10px 0;}
+.main .basic table td:first-child{width: 70px;text-align: right;}
+.main .basic table input{width: 100%;border: none;border-bottom: 1px solid #ccc;outline: none;}
+.main .basic button{padding: 5px 10px; border: none;background: #ff602e;color: white;border-radius: 5px;}
+.main .basic .tx{width: 100%;padding-bottom: 100%;border-radius: 50%;background: url(../images/user.png) no-repeat center;background-size: cover;margin-bottom: 10px;}
+.main .basic .open{background: #ff602e;border-radius: 5px;color: white;padding: 5px 10px;cursor: pointer;display: inline-block;}
+.main .basic .save{width: 100px;margin: 10px auto 0;display: block;outline: none;}
+.main .message{padding-top: 30px;}
+.main .message form{background: #333;padding: 20px 35px 20px;border-radius: 5px;position: relative;width: 700px;margin: 0 auto;}
+.main .message form>.row{background: #fff;border-radius: 5px;padding: 20px;}
+.main .message form .ico{position: absolute;top: -30px;left: 50%;margin-left: -56px;}
+.main .message form>h1{margin: 10px 0;color: white;font-family: 微软雅黑;font-size: 24px;text-align: center;}
+.main .message table{width: 100%;}
+.main .message table td{padding: 10px 0;}
+.main .message table td:first-child{width: 70px;text-align: right;}
+.main .message table input{width: 100%;border: none;border-bottom: 1px solid #ccc;outline: none;}
+.main .message button{padding: 5px 10px; border: none;background: #ff602e;color: white;border-radius: 5px;}
+.main .message .save{width: 100px;margin: 10px auto 0;display: block;outline: none;}
+.main .password{padding-top: 30px;}
+.main .password form{background: #333;padding: 20px 35px 20px;border-radius: 5px;position: relative;width: 700px;margin: 0 auto;}
+.main .password form>.row{background: #fff;border-radius: 5px;padding: 20px;}
+.main .password form .ico{position: absolute;top: -30px;left: 50%;margin-left: -56px;}
+.main .password form>h1{margin: 10px 0;color: white;font-family: 微软雅黑;font-size: 24px;text-align: center;}
+.main .password table{width: 100%;}
+.main .password table td{padding: 10px 0;}
+.main .password table td:first-child{width: 70px;text-align: right;}
+.main .password table input{width: 100%;border: none;border-bottom: 1px solid #ccc;outline: none;}
+.main .password button{padding: 5px 10px; border: none;background: #ff602e;color: white;border-radius: 5px;}
+.main .password .save{width: 100px;margin: 10px auto 0;display: block;outline: none;}
+.main .password .yzm{display: flex;}
+.main .password .yzm span{padding: 3px 10px; border: none;background: #ff602e;color: white;border-radius: 5px;white-space: nowrap;font-size: 12px;margin-left: 10px;}
+
+
+
+.cropper-container{width: 100%;}
+#myModal .modal-header h4{font-family: 微软雅黑;}
+#myModal .up{background: #ff602e;border-radius: 5px;color: white;padding: 5px 10px;cursor: pointer;display: inline-block;}
+#myModal .up input{display: none;}
+#myModal .cut img{width: 100%;}
+#myModal .ok{background: #ff602e;border: none;color: white;border:1px solid #e55629;}
+#myModal .ok:hover{background: #e55629;}
+#photo{width: 500px;}
+
+footer{
+	background: #222;
+	padding: 20px 30px 10px;
+	color: #aaa;
+}
+
+
+
+@keyframes slideInRight{
+	0%{transform: translate(200px,0);opacity: 0;}
+	100%{transform: translate(0,0);opacity: 1;}
+}
+
+
+
