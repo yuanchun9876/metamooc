@@ -20,8 +20,18 @@ public class SubjUnit {
     private String tchName;
 
     private String subjTitle;
+    
+    
 
-    public String getSubjUnitId() {
+    @Override
+	public String toString() {
+		return "SubjUnit [subjUnitId=" + subjUnitId + ", subjId=" + subjId + ", tchId=" + tchId + ", subjUnitTitle="
+				+ subjUnitTitle + ", subjUnitNum=" + subjUnitNum + ", subjUnitCode=" + subjUnitCode + ", subjUnitInfo="
+				+ subjUnitInfo + ", subjUnitLogoUrl=" + subjUnitLogoUrl + ", tchName=" + tchName + ", subjTitle="
+				+ subjTitle + "]";
+	}
+
+	public String getSubjUnitId() {
         return subjUnitId;
     }
 

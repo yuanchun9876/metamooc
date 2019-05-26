@@ -1,3 +1,5 @@
+<%@page import="com.turing.manage.entity.SubjUnit"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +28,7 @@
 	<script src="<%=request.getContextPath() %>/classroom/js/swiper.animate1.0.3.min.js"></script>
 	<script src="<%=request.getContextPath() %>/classroom/js/echarts.min.js"></script>
 	<script src="<%=request.getContextPath() %>/classroom/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="<%=request.getContextPath() %>/classroom/js/ueditor/ueditor.config.js"></script>
-	<script src="<%=request.getContextPath() %>/classroom/js/ueditor/ueditor.parse.min.js"></script>
-    <script src="<%=request.getContextPath() %>/classroom/js/ueditor/ueditor.all.min.js"> </script>
+
 </head>
 <body onselectstart="return false;">
 	<nav class="navbar navbar-inverse">
@@ -72,6 +72,14 @@
 				</form>	
 			</div>
 			<ul>
+				<%
+					List<SubjUnit> list = (List<SubjUnit>)request.getAttribute("unitList");
+					for(SubjUnit subjUnit : list){
+						%>
+						<li ><div class="pro echarts" data-progress="70"></div><a href=""><%=subjUnit.getSubjUnitTitle() %></a></li>
+						<%
+					}
+				%>
 				<li><div class="pro echarts" data-progress="100"></div><a href="">Java学前准备</a></li>
 				<li ><div class="pro echarts" data-progress="100"></div><a href="">流程结构TGC学习法</a></li>
 				<li class="active"><div class="pro echarts" data-progress="70"></div><a href="">Game框架</a></li>
@@ -669,8 +677,8 @@
 				$(".note>ul.con").mCustomScrollbar({
 					scrollInertia:150
 				});
-				UE.getEditor('editor').setHeight(100);
-				$("#ueditor_0").contents().find("body").css("height","auto");
+				
+				
 			}
 			if(!$(".imageText").hasClass("mCustomScrollbar") && $(".imageText").hasClass("active")){
 				$(".imageText").mCustomScrollbar({
@@ -686,12 +694,7 @@
 
 
 		//问答编辑器
-		var ue = UE.getEditor('editor',{
-			toolbars: [['insertcode', '|', 'undo', 'redo', '|', 'bold', 'italic', 'underline','insertimage','blockquote','link','unlink','insertorderedlist','insertunorderedlist','preview']],
-			initialFrameWidth:'auto'  
-        	,initialFrameHeight:'auto' 
-        	,autoHeightEnabled:false
-		});
+
 		$(".note form").on('mouseover',function(){
 			$(".note .con").css("height","30%");
 			// $(".note>ul.con").mCustomScrollbar("update");

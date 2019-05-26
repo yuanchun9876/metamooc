@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.turing.web.mapper.StudyCardMapper" >
+  <resultMap id="BaseResultMap" type="com.turing.web.entity.StudyCard" >
+    <id column="CRD_ID" property="crdId" jdbcType="VARCHAR" />
+    <result column="CRD_SN" property="crdSn" jdbcType="VARCHAR" />
+    <result column="CRD_PASS" property="crdPass" jdbcType="VARCHAR" />
+    <result column="CRD_LEN" property="crdLen" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CRD_ID, CRD_SN, CRD_PASS, CRD_LEN
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from study_card
+    where CRD_ID = #{crdId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from study_card
+    where CRD_ID = #{crdId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.turing.web.entity.StudyCard" >
+    insert into study_card (CRD_ID, CRD_SN, CRD_PASS, 
+      CRD_LEN)
+    values (#{crdId,jdbcType=VARCHAR}, #{crdSn,jdbcType=VARCHAR}, #{crdPass,jdbcType=VARCHAR}, 
+      #{crdLen,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.web.entity.StudyCard" >
+    insert into study_card
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="crdId != null" >
+        CRD_ID,
+      </if>
+      <if test="crdSn != null" >
+        CRD_SN,
+      </if>
+      <if test="crdPass != null" >
+        CRD_PASS,
+      </if>
+      <if test="crdLen != null" >
+        CRD_LEN,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="crdId != null" >
+        #{crdId,jdbcType=VARCHAR},
+      </if>
+      <if test="crdSn != null" >
+        #{crdSn,jdbcType=VARCHAR},
+      </if>
+      <if test="crdPass != null" >
+        #{crdPass,jdbcType=VARCHAR},
+      </if>
+      <if test="crdLen != null" >
+        #{crdLen,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.turing.web.entity.StudyCard" >
+    update study_card
+    <set >
+      <if test="crdSn != null" >
+        CRD_SN = #{crdSn,jdbcType=VARCHAR},
+      </if>
+      <if test="crdPass != null" >
+        CRD_PASS = #{crdPass,jdbcType=VARCHAR},
+      </if>
+      <if test="crdLen != null" >
+        CRD_LEN = #{crdLen,jdbcType=INTEGER},
+      </if>
+    </set>
+    where CRD_ID = #{crdId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.turing.web.entity.StudyCard" >
+    update study_card
+    set CRD_SN = #{crdSn,jdbcType=VARCHAR},
+      CRD_PASS = #{crdPass,jdbcType=VARCHAR},
+      CRD_LEN = #{crdLen,jdbcType=INTEGER}
+    where CRD_ID = #{crdId,jdbcType=VARCHAR}
+  </update>
+</mapper>

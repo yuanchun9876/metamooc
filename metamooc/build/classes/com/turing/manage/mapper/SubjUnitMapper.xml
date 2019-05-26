@@ -27,6 +27,7 @@
 	    , sc.SUBJ_TITLE
 	    from subj_unit  su left join teacher tch  on su.TCH_ID = tch.TCH_ID
 	    left join subject_course sc  on su.SUBJ_ID = sc.SUBJ_ID
+	    order by SUBJ_UNIT_NUM
 	  </select>
   
   <!--  分割    -->

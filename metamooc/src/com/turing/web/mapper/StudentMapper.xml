@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.turing.web.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.turing.web.entity.Student" >
+    <id column="STU_ID" property="stuId" jdbcType="VARCHAR" />
+    <result column="CRD_ID" property="crdId" jdbcType="VARCHAR" />
+    <result column="EDU_TYPE_ID" property="eduTypeId" jdbcType="VARCHAR" />
+    <result column="STU_NAME" property="stuName" jdbcType="VARCHAR" />
+    <result column="STU_NICK" property="stuNick" jdbcType="VARCHAR" />
+    <result column="STU_SEX" property="stuSex" jdbcType="VARCHAR" />
+    <result column="STU_UNIV_COLG" property="stuUnivColg" jdbcType="VARCHAR" />
+    <result column="STU_MAJOR" property="stuMajor" jdbcType="VARCHAR" />
+    <result column="STU_FACE" property="stuFace" jdbcType="VARCHAR" />
+    <result column="STU_PASS" property="stuPass" jdbcType="VARCHAR" />
+    <result column="STU_PHONE" property="stuPhone" jdbcType="VARCHAR" />
+    <result column="STU_WEIXIN" property="stuWeixin" jdbcType="VARCHAR" />
+    <result column="STU_QQ" property="stuQq" jdbcType="VARCHAR" />
+    <result column="STU_EMAIL" property="stuEmail" jdbcType="VARCHAR" />
+    <result column="ACTIVATION_TIME" property="activationTime" jdbcType="DATE" />
+    <result column="INVALID_DATE" property="invalidDate" jdbcType="DATE" />
+    
+     <result column="CRD_SN" property="crdSn" jdbcType="VARCHAR" />
+     
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STU_ID, CRD_ID, EDU_TYPE_ID, STU_NAME, STU_NICK, STU_SEX, STU_UNIV_COLG, STU_MAJOR, 
+    STU_FACE, STU_PASS, STU_PHONE, STU_WEIXIN, STU_QQ, STU_EMAIL, ACTIVATION_TIME, INVALID_DATE
+  </sql>
+  
+  <select id="queryStuByCard" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+   	STU_ID, stu.CRD_ID, EDU_TYPE_ID, STU_NAME, STU_NICK, STU_SEX, STU_UNIV_COLG, STU_MAJOR, 
+    STU_FACE, STU_PASS, STU_PHONE, STU_WEIXIN, STU_QQ, STU_EMAIL, ACTIVATION_TIME, INVALID_DATE
+    ,sc.CRD_SN
+    from student stu  inner join  study_card  sc  on stu.CRD_ID = sc.CRD_ID
+    where sc.CRD_SN = #{stuId,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from student
+    where STU_ID = #{stuId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from student
+    where STU_ID = #{stuId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.turing.web.entity.Student" >
+    insert into student (STU_ID, CRD_ID, EDU_TYPE_ID, 
+      STU_NAME, STU_NICK, STU_SEX, 
+      STU_UNIV_COLG, STU_MAJOR, STU_FACE, 
+      STU_PASS, STU_PHONE, STU_WEIXIN, 
+      STU_QQ, STU_EMAIL, ACTIVATION_TIME, 
+      INVALID_DATE)
+    values (#{stuId,jdbcType=VARCHAR}, #{crdId,jdbcType=VARCHAR}, #{eduTypeId,jdbcType=VARCHAR}, 
+      #{stuName,jdbcType=VARCHAR}, #{stuNick,jdbcType=VARCHAR}, #{stuSex,jdbcType=VARCHAR}, 
+      #{stuUnivColg,jdbcType=VARCHAR}, #{stuMajor,jdbcType=VARCHAR}, #{stuFace,jdbcType=VARCHAR}, 
+      #{stuPass,jdbcType=VARCHAR}, #{stuPhone,jdbcType=VARCHAR}, #{stuWeixin,jdbcType=VARCHAR}, 
+      #{stuQq,jdbcType=VARCHAR}, #{stuEmail,jdbcType=VARCHAR}, #{activationTime,jdbcType=DATE}, 
+      #{invalidDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.web.entity.Student" >
+    insert into student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuId != null" >
+        STU_ID,
+      </if>
+      <if test="crdId != null" >
+        CRD_ID,
+      </if>
+      <if test="eduTypeId != null" >
+        EDU_TYPE_ID,
+      </if>
+      <if test="stuName != null" >
+        STU_NAME,
+      </if>
+      <if test="stuNick != null" >
+        STU_NICK,
+      </if>
+      <if test="stuSex != null" >
+        STU_SEX,
+      </if>
+      <if test="stuUnivColg != null" >
+        STU_UNIV_COLG,
+      </if>
+      <if test="stuMajor != null" >
+        STU_MAJOR,
+      </if>
+      <if test="stuFace != null" >
+        STU_FACE,
+      </if>
+      <if test="stuPass != null" >
+        STU_PASS,
+      </if>
+      <if test="stuPhone != null" >
+        STU_PHONE,
+      </if>
+      <if test="stuWeixin != null" >
+        STU_WEIXIN,
+      </if>
+      <if test="stuQq != null" >
+        STU_QQ,
+      </if>
+      <if test="stuEmail != null" >
+        STU_EMAIL,
+      </if>
+      <if test="activationTime != null" >
+        ACTIVATION_TIME,
+      </if>
+      <if test="invalidDate != null" >
+        INVALID_DATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuId != null" >
+        #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="crdId != null" >
+        #{crdId,jdbcType=VARCHAR},
+      </if>
+      <if test="eduTypeId != null" >
+        #{eduTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuName != null" >
+        #{stuName,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNick != null" >
+        #{stuNick,jdbcType=VARCHAR},
+      </if>
+      <if test="stuSex != null" >
+        #{stuSex,jdbcType=VARCHAR},
+      </if>
+      <if test="stuUnivColg != null" >
+        #{stuUnivColg,jdbcType=VARCHAR},
+      </if>
+      <if test="stuMajor != null" >
+        #{stuMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="stuFace != null" >
+        #{stuFace,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPass != null" >
+        #{stuPass,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPhone != null" >
+        #{stuPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="stuWeixin != null" >
+        #{stuWeixin,jdbcType=VARCHAR},
+      </if>
+      <if test="stuQq != null" >
+        #{stuQq,jdbcType=VARCHAR},
+      </if>
+      <if test="stuEmail != null" >
+        #{stuEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="activationTime != null" >
+        #{activationTime,jdbcType=DATE},
+      </if>
+      <if test="invalidDate != null" >
+        #{invalidDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.turing.web.entity.Student" >
+    update student
+    <set >
+      <if test="crdId != null" >
+        CRD_ID = #{crdId,jdbcType=VARCHAR},
+      </if>
+      <if test="eduTypeId != null" >
+        EDU_TYPE_ID = #{eduTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuName != null" >
+        STU_NAME = #{stuName,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNick != null" >
+        STU_NICK = #{stuNick,jdbcType=VARCHAR},
+      </if>
+      <if test="stuSex != null" >
+        STU_SEX = #{stuSex,jdbcType=VARCHAR},
+      </if>
+      <if test="stuUnivColg != null" >
+        STU_UNIV_COLG = #{stuUnivColg,jdbcType=VARCHAR},
+      </if>
+      <if test="stuMajor != null" >
+        STU_MAJOR = #{stuMajor,jdbcType=VARCHAR},
+      </if>
+      <if test="stuFace != null" >
+        STU_FACE = #{stuFace,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPass != null" >
+        STU_PASS = #{stuPass,jdbcType=VARCHAR},
+      </if>
+      <if test="stuPhone != null" >
+        STU_PHONE = #{stuPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="stuWeixin != null" >
+        STU_WEIXIN = #{stuWeixin,jdbcType=VARCHAR},
+      </if>
+      <if test="stuQq != null" >
+        STU_QQ = #{stuQq,jdbcType=VARCHAR},
+      </if>
+      <if test="stuEmail != null" >
+        STU_EMAIL = #{stuEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="activationTime != null" >
+        ACTIVATION_TIME = #{activationTime,jdbcType=DATE},
+      </if>
+      <if test="invalidDate != null" >
+        INVALID_DATE = #{invalidDate,jdbcType=DATE},
+      </if>
+    </set>
+    where STU_ID = #{stuId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.turing.web.entity.Student" >
+    update student
+    set CRD_ID = #{crdId,jdbcType=VARCHAR},
+      EDU_TYPE_ID = #{eduTypeId,jdbcType=VARCHAR},
+      STU_NAME = #{stuName,jdbcType=VARCHAR},
+      STU_NICK = #{stuNick,jdbcType=VARCHAR},
+      STU_SEX = #{stuSex,jdbcType=VARCHAR},
+      STU_UNIV_COLG = #{stuUnivColg,jdbcType=VARCHAR},
+      STU_MAJOR = #{stuMajor,jdbcType=VARCHAR},
+      STU_FACE = #{stuFace,jdbcType=VARCHAR},
+      STU_PASS = #{stuPass,jdbcType=VARCHAR},
+      STU_PHONE = #{stuPhone,jdbcType=VARCHAR},
+      STU_WEIXIN = #{stuWeixin,jdbcType=VARCHAR},
+      STU_QQ = #{stuQq,jdbcType=VARCHAR},
+      STU_EMAIL = #{stuEmail,jdbcType=VARCHAR},
+      ACTIVATION_TIME = #{activationTime,jdbcType=DATE},
+      INVALID_DATE = #{invalidDate,jdbcType=DATE}
+    where STU_ID = #{stuId,jdbcType=VARCHAR}
+  </update>
+</mapper>
