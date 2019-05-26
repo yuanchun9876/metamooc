@@ -1,3 +1,4 @@
+<%@page import="com.turing.manage.entity.SubjSection"%>
 <%@page import="com.turing.manage.entity.SubjUnit"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -73,52 +74,14 @@
 			</div>
 			<ul>
 				<%
-					List<SubjUnit> list = (List<SubjUnit>)request.getAttribute("unitList");
-					for(SubjUnit subjUnit : list){
+					List<SubjUnit> unitList = (List<SubjUnit>)request.getAttribute("unitList");
+					for(int i=0; i<unitList.size(); i++){
+						SubjUnit subjUnit = unitList.get(i);
 						%>
-						<li ><div class="pro echarts" data-progress="70"></div><a href=""><%=subjUnit.getSubjUnitTitle() %></a></li>
+						<li class="<%=i==0?"active":"" %>"><div class="pro echarts" data-progress="70"></div><a href=""><%=subjUnit.getSubjUnitTitle() %></a></li>
 						<%
 					}
 				%>
-				<li><div class="pro echarts" data-progress="100"></div><a href="">Java学前准备</a></li>
-				<li ><div class="pro echarts" data-progress="100"></div><a href="">流程结构TGC学习法</a></li>
-				<li class="active"><div class="pro echarts" data-progress="70"></div><a href="">Game框架</a></li>
-				<li><div class="pro echarts" data-progress="20"></div><a href="">数组基础</a></li>
-				<li><div class="pro echarts" data-progress="40"></div><a href="">综合实战《贪吃蛇》</a></li>
-				<li><div class="pro echarts" data-progress="10"></div><a href="">方法封装</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">类与对象</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">三性质</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">五关系</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">容器基础</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">Java语法大全</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">基础API</a></li>
-				<li><div class="pro echarts" data-progress="0"></div><a href="">如果某一节课的标题文字特别特别特别特别特别特别特别特别特别特别特别特别多就会隐藏起来</a></li>
 			</ul>
 			<div class="drag"><span></span></div>
 		</div>
@@ -127,25 +90,15 @@
 				<div class="swiper-button-prev"><span class="fa fa-chevron-left"></span></div>
 				<div class="swiper-container">
 					<ul class="breadcrumb swiper-wrapper">
-						<li class="swiper-slide"><a href="#">什么是编程</a></li>
-						<li class="swiper-slide active">敏锐识别流程结构</li>
-						<li class="swiper-slide"><a href="#">汉英对照闯过语法关</a></li>
-						<li class="swiper-slide"><a href="#">用调试工具搞定语义关</a></li>
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
-						<li class="swiper-slide"><a href="#">TGC学习法轻松过语用关</a></li>	
+						<%
+							List<SubjSection> sctnList = (List<SubjSection>)request.getAttribute("sctnList");
+							for(int i=0; i<sctnList.size(); i++){
+								SubjSection subjSctn = sctnList.get(i);
+								%>
+								<li class="swiper-slide "><a href="#"><%=subjSctn.getSubjSctnTitle() %></a></li>
+								<%
+							}
+						%>
 					</ul>
 				</div>
 				<div class="swiper-button-next"><span class="fa fa-chevron-right"></span></div>		

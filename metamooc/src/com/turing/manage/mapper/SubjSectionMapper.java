@@ -1,5 +1,7 @@
 package com.turing.manage.mapper;
 
+import java.util.List;
+
 import com.turing.manage.entity.SubjSection;
 
 public interface SubjSectionMapper {
@@ -14,4 +16,6 @@ public interface SubjSectionMapper {
     int updateByPrimaryKeySelective(SubjSection record);
 
     int updateByPrimaryKey(SubjSection record);
+
+	List<SubjSection> queryByUnit(String subjUnitId);
 }

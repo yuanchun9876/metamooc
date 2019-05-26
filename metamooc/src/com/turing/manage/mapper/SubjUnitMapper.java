@@ -18,4 +18,6 @@ public interface SubjUnitMapper {
     int updateByPrimaryKey(SubjUnit record);
 
 	List<SubjUnit> queryAll();
+
+	List<SubjUnit> queryBySubj(String subjId);
 }

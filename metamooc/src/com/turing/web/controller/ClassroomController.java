@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.turing.manage.entity.SubjSection;
 import com.turing.manage.entity.SubjUnit;
 import com.turing.web.entity.Student;
 import com.turing.web.service.IClassroomService;
@@ -26,18 +27,32 @@ public class ClassroomController {
 		String crdSn = "J2019000001";
 		Student stu = classroomService.queryStuByCard(crdSn);
 		session.setAttribute("stu", stu);
+		// 当前的科目单元类型
+		session.setAttribute("subj", "1");
 		return "redirect:openVideoPage.action";
 	}
 	
 	@RequestMapping("/openVideoPage")
 	public String openVideoPage(HttpSession session, Model model) {
 		System.out.println("/classroom/openVideoPage");
-		List<SubjUnit> unitList = classroomService.querySubjUnitList();
-//		System.out.println("unitList:" + unitList);
+		
+		// 得到 章列表
+		String subjId = (String) session.getAttribute("subj");
+		List<SubjUnit> unitList = classroomService.querySubjUnitListBySubj(subjId);
+		System.out.println("unitList:" + unitList);
 		model.addAttribute("unitList", unitList);
 		
-		Student stu = (Student) session.getAttribute("stu");
-		System.out.println(stu.getStuName());
+		// 得到 章列表中第一个对应的节列表
+		if (unitList!=null && unitList.size()>0) {
+			List<SubjSection> sctnList = classroomService.querySubjSectionListByUnit(unitList.get(0).getSubjUnitId());
+			System.out.println("sctnList:" + sctnList);
+			model.addAttribute("sctnList", sctnList);
+		}
+		
+//		// 学员信息
+//		Student stu = (Student) session.getAttribute("stu");
+//		System.out.println(stu.getStuName());
+//		model.addAttribute("stu", stu);
 		
 		return "classroom/video";
 	}

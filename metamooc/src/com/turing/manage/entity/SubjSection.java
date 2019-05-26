@@ -1,6 +1,7 @@
 package com.turing.manage.entity;
 
 public class SubjSection {
+	
     private String subjSctnId;
 
     private String subjUnitId;
