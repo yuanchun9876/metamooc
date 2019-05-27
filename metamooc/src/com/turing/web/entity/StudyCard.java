@@ -8,6 +8,9 @@ public class StudyCard {
     private String crdPass;
 
     private Integer crdLen;
+    
+    private Integer crdIsActive;
+    
 
     public String getCrdId() {
         return crdId;
@@ -40,4 +43,13 @@ public class StudyCard {
     public void setCrdLen(Integer crdLen) {
         this.crdLen = crdLen;
     }
+
+	public Integer getCrdIsActive() {
+		return crdIsActive;
+	}
+
+	public void setCrdIsActive(Integer crdIsActive) {
+		this.crdIsActive = crdIsActive;
+	}
+    
 }

@@ -6,9 +6,10 @@
     <result column="CRD_SN" property="crdSn" jdbcType="VARCHAR" />
     <result column="CRD_PASS" property="crdPass" jdbcType="VARCHAR" />
     <result column="CRD_LEN" property="crdLen" jdbcType="INTEGER" />
+     <result column="CRD_IS_ACTIVE" property="crdIsActive" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    CRD_ID, CRD_SN, CRD_PASS, CRD_LEN
+    CRD_ID, CRD_SN, CRD_PASS, CRD_LEN, CRD_IS_ACTIVE
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 

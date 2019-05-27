@@ -20,7 +20,17 @@ public class ClassroomController {
 	
 	@Autowired
 	private IClassroomService classroomService;
-
+	
+	
+	@RequestMapping("/loginPage")
+	public String loginPage(String subjId, Model model) {
+		System.out.println("/classroom/loginPage");
+		model.addAttribute("subjId", subjId);
+		
+		return "home/login";
+	}
+	
+	
 	@RequestMapping("/login")
 	public String login(HttpSession session) {
 		System.out.println("/classroom/login");

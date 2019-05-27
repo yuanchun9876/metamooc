@@ -1,46 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	String num = request.getParameter("NUM");
-%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<script src="js/isPhone.js"></script>
+	<script src="<%=request.getContextPath() %>/home/js/isPhone.js"></script>
 	<meta charset="UTF-8">
 	<title>图灵云教育|Meta在线课堂|校园招聘特训营</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta name="keywords" content="图灵云教育，Meta，在线教育，JavaSE，JavaWeb，大数据，Python，校园招聘，turingedu.com，turingmeta.com，校招笔试题">
-	<link rel="shortcut icon" href="images/favicon.ico">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/customerBar.css">
-	<link rel="stylesheet" href="css/login.css">
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/customerBar.js"></script>	
+	<link rel="shortcut icon" href="<%=request.getContextPath() %>/home/images/favicon.ico">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/home/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/home/css/customerBar.css">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/home/css/login.css">
+	<script src="<%=request.getContextPath() %>/home/js/jquery-1.11.3.min.js"></script>
+	<script src="<%=request.getContextPath() %>/home/js/bootstrap.min.js"></script>
+	<script src="<%=request.getContextPath() %>/home/js/customerBar.js"></script>	
 </head>
-<body class="bg<%=num%>">
+<body class="bg<%=request.getAttribute("subjId")%>">
 	<div class="login clearfix">
-		<div class="left"><img src="images/login_bg<%=num%>.jpg" alt=""></div>
+		<div class="left"><img src="<%=request.getContextPath() %>/home/images/login_bg<%=request.getAttribute("subjId")%>.jpg" alt=""></div>
 		<div class="right">
-			<%
-				String src = "";
-				int kc_num=Integer.parseInt(num);
-				switch(kc_num){
-					case 1:
-					src="metajavase";
-					break;
-					case 3:
-					src="metalinux";
-					break;
-					case 4:
-					src="metabigdata";
-					break;
-				}
-			%>
+
 			<form action="<%=request.getContextPath()%>/classroom/login.action" method="post">
-				<img src="images/ewm2.jpg" alt="">
-				<p>学习邀请码:</p>
-				<input type="text" name="yqm" placeholder="请输入扫码后获得的邀请码">
+				<p>学习卡号:</p>
+				<input type="text" name="yqm" placeholder="请输入学习卡号">
+				<p>登录密码:</p>
+				<input type="text" name="yqm" placeholder="请输入登录密码">
 				<button>进入图灵云课堂<span class="glyphicon glyphicon-hand-right"></span></button>
 			</form>
 		</div>
