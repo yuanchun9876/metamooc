@@ -11,6 +11,17 @@
   <sql id="Base_Column_List" >
     CRD_ID, CRD_SN, CRD_PASS, CRD_LEN, CRD_IS_ACTIVE
   </sql>
+  
+  <select id="queryCardBySn" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    CRD_ID, CRD_SN, CRD_PASS, CRD_LEN
+    from study_card
+    where CRD_SN = #{value,jdbcType=VARCHAR}
+  </select>
+  
+  
+  <!--    -->
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />

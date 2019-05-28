@@ -20,12 +20,13 @@
 	<div class="login clearfix">
 		<div class="left"><img src="<%=request.getContextPath() %>/home/images/login_bg<%=request.getAttribute("subjId")%>.jpg" alt=""></div>
 		<div class="right">
-
-			<form action="<%=request.getContextPath()%>/classroom/login.action" method="post">
+			<%=request.getAttribute("msg")!=null?request.getAttribute("msg"):"" %>
+			<form action="<%=request.getContextPath()%>/login/login.action" method="post">
+				<input type="hidden" name="subjId" value="<%=request.getAttribute("subjId")%>" >
 				<p>学习卡号:</p>
-				<input type="text" name="yqm" placeholder="请输入学习卡号">
+				<input type="text" name="crdSn" placeholder="请输入学习卡号">
 				<p>登录密码:</p>
-				<input type="text" name="yqm" placeholder="请输入登录密码">
+				<input type="text" name="pass" placeholder="请输入登录密码">
 				<button>进入图灵云课堂<span class="glyphicon glyphicon-hand-right"></span></button>
 			</form>
 		</div>

@@ -33,7 +33,7 @@
     STU_FACE, STU_PASS, STU_PHONE, STU_WEIXIN, STU_QQ, STU_EMAIL, ACTIVATION_TIME, INVALID_DATE
     ,sc.CRD_SN
     from student stu  inner join  study_card  sc  on stu.CRD_ID = sc.CRD_ID
-    where sc.CRD_SN = #{stuId,jdbcType=VARCHAR}
+    where stu.CRD_ID = #{crdId,jdbcType=VARCHAR}
   </select>
   
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >

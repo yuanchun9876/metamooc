@@ -20,27 +20,9 @@ public class ClassroomController {
 	
 	@Autowired
 	private IClassroomService classroomService;
+
 	
-	
-	@RequestMapping("/loginPage")
-	public String loginPage(String subjId, Model model) {
-		System.out.println("/classroom/loginPage");
-		model.addAttribute("subjId", subjId);
-		
-		return "home/login";
-	}
-	
-	
-	@RequestMapping("/login")
-	public String login(HttpSession session) {
-		System.out.println("/classroom/login");
-		String crdSn = "J2019000001";
-		Student stu = classroomService.queryStuByCard(crdSn);
-		session.setAttribute("stu", stu);
-		// 当前的科目单元类型
-		session.setAttribute("subj", "1");
-		return "redirect:openVideoPage.action";
-	}
+
 	
 	@RequestMapping("/openVideoPage")
 	public String openVideoPage(HttpSession session, Model model) {

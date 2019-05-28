@@ -14,4 +14,6 @@ public interface StudyCardMapper {
     int updateByPrimaryKeySelective(StudyCard record);
 
     int updateByPrimaryKey(StudyCard record);
+
+	StudyCard queryCardBySn(String crdSn);
 }

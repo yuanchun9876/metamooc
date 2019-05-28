@@ -69,7 +69,7 @@
 							<h1 class="ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.3s">【图灵云<span>Meta</span>在线课堂】</h1>
 							<ul class="clearfix ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.6s">
 								<li>
-									<a href="<%=request.getContextPath() %>/classroom/loginPage.action?subjId=1" target="_blank">
+									<a href="<%=request.getContextPath() %>/login/loginPage.action?subjId=1" target="_blank">
 										<span class="glyphicon glyphicon-expand"></span>
 										<img src="<%=request.getContextPath() %>/home/images/xsxd_zxkc_p1.jpg" alt="">
 										<div class="progress">
