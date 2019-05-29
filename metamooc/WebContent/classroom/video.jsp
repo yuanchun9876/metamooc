@@ -1,3 +1,4 @@
+<%@page import="com.turing.web.entity.Student"%>
 <%@page import="com.turing.manage.entity.SubjSection"%>
 <%@page import="com.turing.manage.entity.SubjUnit"%>
 <%@page import="java.util.List"%>
@@ -54,7 +55,7 @@
 						<a href="#" class="clearfix">
 							<img src="<%=request.getContextPath() %>/classroom/images/user.png" alt="">
 							<div>
-								<span>张同学</span>
+								<span><%=((Student)session.getAttribute("stu")).getStuNick() %></span>
 								<span><span class="glyphicon glyphicon-star"></span>积分：1785</span>
 							</div>
 						</a>
@@ -78,7 +79,7 @@
 					for(int i=0; i<unitList.size(); i++){
 						SubjUnit subjUnit = unitList.get(i);
 						%>
-						<li class="<%=i==0?"active":"" %>"><div class="pro echarts" data-progress="70"></div><a href=""><%=subjUnit.getSubjUnitTitle() %></a></li>
+						<li class="<%=request.getAttribute("unitSelected").equals(subjUnit.getSubjUnitId())?"active":"" %>"><div class="pro echarts" data-progress="70"></div><a href="<%=request.getContextPath() %>/classroom/querySctnByUnit.action?unitId=<%=subjUnit.getSubjUnitId() %>"><%=subjUnit.getSubjUnitTitle() %></a></li>
 						<%
 					}
 				%>

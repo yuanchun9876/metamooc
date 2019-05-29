@@ -34,8 +34,13 @@ public class ClassroomController {
 		System.out.println("unitList:" + unitList);
 		model.addAttribute("unitList", unitList);
 		
+		
+		
 		// 得到 章列表中第一个对应的节列表
 		if (unitList!=null && unitList.size()>0) {
+			
+			model.addAttribute("unitSelected", unitList.get(0).getSubjUnitId()); // 表示被选中
+			
 			List<SubjSection> sctnList = classroomService.querySubjSectionListByUnit(unitList.get(0).getSubjUnitId());
 			System.out.println("sctnList:" + sctnList);
 			model.addAttribute("sctnList", sctnList);
@@ -45,6 +50,24 @@ public class ClassroomController {
 //		Student stu = (Student) session.getAttribute("stu");
 //		System.out.println(stu.getStuName());
 //		model.addAttribute("stu", stu);
+		
+		return "classroom/video";
+	}
+	
+	@RequestMapping("/querySctnByUnit")
+	public String querySctnByUnit(String unitId, HttpSession session, Model model) {
+		System.out.println("/classroom/querySctnByUnit");
+		
+		// 得到 章列表
+		String subjId = (String) session.getAttribute("subj");
+		List<SubjUnit> unitList = classroomService.querySubjUnitListBySubj(subjId);
+		System.out.println("unitList:" + unitList);
+		model.addAttribute("unitList", unitList);
+		
+		model.addAttribute("unitSelected", unitId); // 表示被选中
+		List<SubjSection> sctnList = classroomService.querySubjSectionListByUnit(unitId);
+		System.out.println("sctnList:" + sctnList);
+		model.addAttribute("sctnList", sctnList);
 		
 		return "classroom/video";
 	}
