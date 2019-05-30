@@ -20,4 +20,8 @@ public interface IClassroomService {
 
 	List<ResourceData> queryRsrcDataByUnit(String unitId);
 
+	SubjUnit queryById(String unitId);
+
+	SubjSection querySctnById(String sctnId);
+
 }

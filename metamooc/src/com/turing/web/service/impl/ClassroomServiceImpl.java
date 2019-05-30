@@ -21,7 +21,7 @@ import com.turing.web.service.IClassroomService;
 public class ClassroomServiceImpl implements IClassroomService {
 
 	@Autowired
-	private SubjUnitMapper suMapper;
+	private SubjUnitMapper unitMapper;
 	
 	@Autowired
 	private StudentMapper stuMapper;
@@ -38,7 +38,7 @@ public class ClassroomServiceImpl implements IClassroomService {
 	@Override
 	public List<SubjUnit> querySubjUnitListBySubj(String subjId) {
 		// TODO Auto-generated method stub
-		return suMapper.queryBySubj(subjId);
+		return unitMapper.queryBySubj(subjId);
 	}
 
 	@Override
@@ -63,6 +63,18 @@ public class ClassroomServiceImpl implements IClassroomService {
 	public List<ResourceData> queryRsrcDataByUnit(String unitId) {
 		// TODO Auto-generated method stub
 		return rsrcDataMapper.queryRsrcDataByUnit(unitId);
+	}
+
+	@Override
+	public SubjUnit queryById(String unitId) {
+		// TODO Auto-generated method stub
+		return unitMapper.selectByPrimaryKey(unitId);
+	}
+
+	@Override
+	public SubjSection querySctnById(String sctnId) {
+		// TODO Auto-generated method stub
+		return sctnMapper.selectByPrimaryKey(sctnId);
 	}
 	
 	

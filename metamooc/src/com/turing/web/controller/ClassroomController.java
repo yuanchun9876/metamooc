@@ -33,7 +33,7 @@ public class ClassroomController {
 		// 得到 章列表
 		String subjId = (String) session.getAttribute("subj");
 		List<SubjUnit> unitList = classroomService.querySubjUnitListBySubj(subjId);
-		System.out.println("unitList:" + unitList);
+		//System.out.println("unitList:" + unitList);
 		model.addAttribute("unitList", unitList);
 		
 		
@@ -41,11 +41,19 @@ public class ClassroomController {
 		// 得到 章列表中第一个对应的节列表
 		if (unitList!=null && unitList.size()>0) {
 			
+			model.addAttribute("unit",  unitList.get(0));
+			
 			model.addAttribute("unitSelected", unitList.get(0).getSubjUnitId()); // 表示被选中
 			
 			List<SubjSection> sctnList = classroomService.querySubjSectionListByUnit(unitList.get(0).getSubjUnitId());
-			System.out.println("sctnList:" + sctnList);
+			//System.out.println("sctnList:" + sctnList);
 			model.addAttribute("sctnList", sctnList);
+			
+			if(sctnList!=null && sctnList.size()>0) {
+				model.addAttribute("sctn",  sctnList.get(0));
+			}
+			
+			
 			
 			// 根据 知识章 查询对应有效的资源类型
 			List<ResourceType> rsrcTypeList = classroomService.queryRsrcTypeByUnit(unitList.get(0).getSubjUnitId());
@@ -68,8 +76,11 @@ public class ClassroomController {
 	}
 	
 	@RequestMapping("/querySctnByUnit")
-	public String querySctnByUnit(String unitId, HttpSession session, Model model) {
+	public String querySctnByUnit(String unitId, String sctnId, HttpSession session, Model model) {
 		System.out.println("/classroom/querySctnByUnit");
+		
+		SubjUnit unit = classroomService.queryById(unitId);
+		model.addAttribute("unit",  unit);
 		
 		// 得到 章列表
 		String subjId = (String) session.getAttribute("subj");
@@ -82,6 +93,22 @@ public class ClassroomController {
 		List<SubjSection> sctnList = classroomService.querySubjSectionListByUnit(unitId);
 		System.out.println("sctnList:" + sctnList);
 		model.addAttribute("sctnList", sctnList);
+		
+		if(sctnId != null) {
+			SubjSection sctn = classroomService.querySctnById(sctnId);
+			System.out.println("sctn:" + sctn.getSubjSctnTitle());
+			model.addAttribute("sctn", sctn);
+			// 增加 记录
+		}else {
+			if(sctnList!=null && sctnList.size()>0) {
+				System.out.println("sctn:" + sctnList.get(0).getSubjSctnTitle());
+				model.addAttribute("sctn",  sctnList.get(0));
+			}
+		}
+		
+		
+		
+		
 		
 		// 根据 知识章 查询对应有效的资源类型
 		List<ResourceType> rsrcTypeList = classroomService.queryRsrcTypeByUnit(unitId);

@@ -98,7 +98,7 @@
 							for(int i=0; i<sctnList.size(); i++){
 								SubjSection subjSctn = sctnList.get(i);
 								%>
-								<li class="swiper-slide "><a href="#"><%=subjSctn.getSubjSctnTitle() %></a></li>
+								<li class="swiper-slide <%=((SubjSection)request.getAttribute("sctn")).getSubjSctnId().equals(subjSctn.getSubjSctnId())?"active":"" %>"><a href="<%=request.getContextPath() %>/classroom/querySctnByUnit.action?unitId=<%=subjSctn.getSubjUnitId() %>&sctnId=<%=subjSctn.getSubjSctnId() %>"><%=subjSctn.getSubjSctnTitle() %></a></li>
 								<%
 							}
 						%>
@@ -352,20 +352,7 @@
 				</div>
 			</div>
 			<div class="imageText">
-				<img src="<%=request.getContextPath() %>/classroom/images/imageText.jpg" alt="">
-				<p>哈尔滨图灵云教育仍始终秉承着以“实战为导向”，“质量为中心”的教育理念，坚持着“以企业岗位需求为根本，以学员的高品质就业为目标”，“与全球IT技术发展同步”的原则顽强的战斗在推动学员就业的前线。学校始终以诚信为本，坚守“良心教育，放心就业”的信念。</p>
-				<p>图灵云教育始建于2001年，历经十多年的发展，已经成为集科研，教育，产品输出一体化的哈尔滨龙头高端IT培训企业。</p>
-				<p>我们在IT培训方面秉承着“以实战为导向，以质量为中心”的教学理念，随着全球IT技术的不断进步而不断发展创新，在哈尔滨电脑学校中有着一定的权威。</p>
-				<p>哈尔滨图灵云教育以中国IT产品的人力教育基础为使命，致力于探索IT职业教育的有效模式。图灵云始终坚持将职业素质教育与知识技能教育并重，以企业岗位需求为根本，以学员的高品质就业为目标。</p>
-				<p>凭借在众多领域的开发经验和强大的技术支持，图灵云一直致力于哈尔滨Java培训，Linux培训，python培训，SQL培训，大数据培训，来提供企业IT服务。</p>
-				<p>力争成为国内一流的，国际知名的软件培训课程产品，IT培训教学方案的一流提供商。打造国内高端IT培训领军品牌，为民族IT产业发展做出更大的贡献。</p>
-				<img src="<%=request.getContextPath() %>/classroom/images/imageText.jpg" alt="">
-				<p>哈尔滨图灵云教育仍始终秉承着以“实战为导向”，“质量为中心”的教育理念，坚持着“以企业岗位需求为根本，以学员的高品质就业为目标”，“与全球IT技术发展同步”的原则顽强的战斗在推动学员就业的前线。学校始终以诚信为本，坚守“良心教育，放心就业”的信念。</p>
-				<p>图灵云教育始建于2001年，历经十多年的发展，已经成为集科研，教育，产品输出一体化的哈尔滨龙头高端IT培训企业。</p>
-				<p>我们在IT培训方面秉承着“以实战为导向，以质量为中心”的教学理念，随着全球IT技术的不断进步而不断发展创新，在哈尔滨电脑学校中有着一定的权威。</p>
-				<p>哈尔滨图灵云教育以中国IT产品的人力教育基础为使命，致力于探索IT职业教育的有效模式。图灵云始终坚持将职业素质教育与知识技能教育并重，以企业岗位需求为根本，以学员的高品质就业为目标。</p>
-				<p>凭借在众多领域的开发经验和强大的技术支持，图灵云一直致力于哈尔滨Java培训，Linux培训，python培训，SQL培训，大数据培训，来提供企业IT服务。</p>
-				<p>力争成为国内一流的，国际知名的软件培训课程产品，IT培训教学方案的一流提供商。打造国内高端IT培训领军品牌，为民族IT产业发展做出更大的贡献。</p>
+				<%=((SubjSection)request.getAttribute("sctn")).getSubjSctnPicText() %>
 			</div>
 			<div class="label">
 				<ul class="aleady">
