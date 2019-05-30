@@ -1,3 +1,5 @@
+<%@page import="com.turing.manage.entity.ResourceData"%>
+<%@page import="com.turing.manage.entity.ResourceType"%>
 <%@page import="com.turing.web.entity.Student"%>
 <%@page import="com.turing.manage.entity.SubjSection"%>
 <%@page import="com.turing.manage.entity.SubjUnit"%>
@@ -243,35 +245,30 @@
 			</div>
 			<div class="download">
 				<ul>
-					<li>
-						<h1>课堂代码</h1>
-						<ul>
-							<li><a href="">流程结构与TGC<span class="fa fa-download"></span></a></li>
-							<li><a href="">Demo流程结构<span class="fa fa-download"></span></a></li>
-						</ul>
-					</li>
-					<li>
-						<h1>开发工具</h1>
-						<ul>
-							<li><a href="">JDK8<span class="fa fa-download"></span></a></li>
-							<li><a href="">Eclipsez中文教学版<span class="fa fa-download"></span></a></li>
-						</ul>
-					</li>
-					<li>
-						<h1>学习手册</h1>
-						<ul>
-							<li><a href="">JDK7手册<span class="fa fa-download"></span></a></li>
-							<li><a href="">APIdemo大全<span class="fa fa-download"></span></a></li>
-						</ul>
-					</li>
-					<li>
-						<h1>本次作业</h1>
-						<ul>
-							<li><a href="">基础训练<span class="fa fa-download"></span></a></li>
-							<li><a href="">深度训练<span class="fa fa-download"></span></a></li>
-							<li><a href="">高级训练<span class="fa fa-download"></span></a></li>
-						</ul>
-					</li>
+					<%
+					List<ResourceType> rsrcTypeList = (List<ResourceType>)request.getAttribute("rsrcTypeList");
+					for(ResourceType rsrcType : rsrcTypeList) {
+						%>
+						<li>
+							<h1>课堂代码<%=rsrcType.getRsrcTypeName() %></h1>
+							<ul>
+								<%
+								List<ResourceData> rsrcDataList =  (List<ResourceData>)request.getAttribute("rsrcDataList");
+								for(ResourceData rsrcData : rsrcDataList){
+									if(rsrcData.getRsrcTypeId().equals(rsrcType.getRsrcTypeId())){
+										%>
+											<li><a href=""><%=rsrcData.getRsrcName() %><span class="fa fa-download"></span></a></li>	
+										<%
+									}
+								}
+								%>
+							</ul>
+						</li>					
+						<%
+					}
+						
+					%>
+				
 				</ul>
 			</div>
 			<div class="test">
