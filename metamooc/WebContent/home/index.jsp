@@ -50,7 +50,7 @@
 						<img src="<%=request.getContextPath() %>/home/images/xsxd_logo.png" alt="">
 						<ul>
 							<li><a href="index.html">线上习得</a></li>
-							<li><a href="xxms.html">线下面授</a></li>
+							<li><a href="<%=request.getContextPath()%>/login.jsp">线下面授</a></li>
 							<li><a href="gdzc.html">搞定职场</a></li>
 							<li><a href="about.html">关于我们</a></li>
 						</ul>

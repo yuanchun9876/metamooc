@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.turing.web.mapper.StuStudyMapper" >
+  <resultMap id="BaseResultMap" type="com.turing.web.entity.StuStudy" >
+    <id column="STU_STDY_ID" property="stuStdyId" jdbcType="VARCHAR" />
+    <result column="STU_ID" property="stuId" jdbcType="VARCHAR" />
+    <result column="SUBJ_SCTN_ID" property="subjSctnId" jdbcType="VARCHAR" />
+    <result column="STDY_PROGRESS" property="stdyProgress" jdbcType="DECIMAL" />
+    <result column="STDY_BEGIN_TIME" property="stdyBeginTime" jdbcType="TIMESTAMP" />
+    <result column="STDY_NEW_TIME" property="stdyNewTime" jdbcType="TIMESTAMP" />
+    <result column="STDY_ISOVER" property="stdyIsover" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STU_STDY_ID, STU_ID, SUBJ_SCTN_ID, STDY_PROGRESS, STDY_BEGIN_TIME, STDY_NEW_TIME, 
+    STDY_ISOVER
+  </sql>
+  
+  
+  <select id="isHavRow" resultMap="BaseResultMap"  >
+    select 
+        STU_STDY_ID, STU_ID, SUBJ_SCTN_ID, STDY_PROGRESS, STDY_BEGIN_TIME, STDY_NEW_TIME, STDY_ISOVER
+    from STU_STUDY
+    where STU_ID = #{stuId}  and SUBJ_SCTN_ID = #{subjSctnId}
+  </select>
+  
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from STU_STUDY
+    where STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from STU_STUDY
+    where STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.turing.web.entity.StuStudy" >
+    insert into STU_STUDY (STU_STDY_ID, STU_ID, SUBJ_SCTN_ID, 
+      STDY_PROGRESS, STDY_BEGIN_TIME, STDY_NEW_TIME, 
+      STDY_ISOVER)
+    values (#{stuStdyId,jdbcType=VARCHAR}, #{stuId,jdbcType=VARCHAR}, #{subjSctnId,jdbcType=VARCHAR}, 
+      #{stdyProgress,jdbcType=DECIMAL}, #{stdyBeginTime,jdbcType=TIMESTAMP}, #{stdyNewTime,jdbcType=TIMESTAMP}, 
+      #{stdyIsover,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.web.entity.StuStudy" >
+    insert into STU_STUDY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuStdyId != null" >
+        STU_STDY_ID,
+      </if>
+      <if test="stuId != null" >
+        STU_ID,
+      </if>
+      <if test="subjSctnId != null" >
+        SUBJ_SCTN_ID,
+      </if>
+      <if test="stdyProgress != null" >
+        STDY_PROGRESS,
+      </if>
+      <if test="stdyBeginTime != null" >
+        STDY_BEGIN_TIME,
+      </if>
+      <if test="stdyNewTime != null" >
+        STDY_NEW_TIME,
+      </if>
+      <if test="stdyIsover != null" >
+        STDY_ISOVER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuStdyId != null" >
+        #{stuStdyId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuId != null" >
+        #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjSctnId != null" >
+        #{subjSctnId,jdbcType=VARCHAR},
+      </if>
+      <if test="stdyProgress != null" >
+        #{stdyProgress,jdbcType=DECIMAL},
+      </if>
+      <if test="stdyBeginTime != null" >
+        #{stdyBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stdyNewTime != null" >
+        #{stdyNewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stdyIsover != null" >
+        #{stdyIsover,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.turing.web.entity.StuStudy" >
+    update STU_STUDY
+    <set >
+      <if test="stuId != null" >
+        STU_ID = #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjSctnId != null" >
+        SUBJ_SCTN_ID = #{subjSctnId,jdbcType=VARCHAR},
+      </if>
+      <if test="stdyProgress != null" >
+        STDY_PROGRESS = #{stdyProgress,jdbcType=DECIMAL},
+      </if>
+      <if test="stdyBeginTime != null" >
+        STDY_BEGIN_TIME = #{stdyBeginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stdyNewTime != null" >
+        STDY_NEW_TIME = #{stdyNewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stdyIsover != null" >
+        STDY_ISOVER = #{stdyIsover,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.turing.web.entity.StuStudy" >
+    update STU_STUDY
+    set STU_ID = #{stuId,jdbcType=VARCHAR},
+      SUBJ_SCTN_ID = #{subjSctnId,jdbcType=VARCHAR},
+      STDY_PROGRESS = #{stdyProgress,jdbcType=DECIMAL},
+      STDY_BEGIN_TIME = #{stdyBeginTime,jdbcType=TIMESTAMP},
+      STDY_NEW_TIME = #{stdyNewTime,jdbcType=TIMESTAMP},
+      STDY_ISOVER = #{stdyIsover,jdbcType=VARCHAR}
+    where STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.turing.web.mapper.NoteTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.turing.web.entity.NoteType" >
+    <id column="NOTE_TYPE_ID" property="noteTypeId" jdbcType="VARCHAR" />
+    <result column="NOTE_TYPE_NAME" property="noteTypeName" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    NOTE_TYPE_ID, NOTE_TYPE_NAME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from NOTE_TYPE
+    where NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from NOTE_TYPE
+    where NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.turing.web.entity.NoteType" >
+    insert into NOTE_TYPE (NOTE_TYPE_ID, NOTE_TYPE_NAME)
+    values (#{noteTypeId,jdbcType=VARCHAR}, #{noteTypeName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.web.entity.NoteType" >
+    insert into NOTE_TYPE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="noteTypeId != null" >
+        NOTE_TYPE_ID,
+      </if>
+      <if test="noteTypeName != null" >
+        NOTE_TYPE_NAME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="noteTypeId != null" >
+        #{noteTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="noteTypeName != null" >
+        #{noteTypeName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.turing.web.entity.NoteType" >
+    update NOTE_TYPE
+    <set >
+      <if test="noteTypeName != null" >
+        NOTE_TYPE_NAME = #{noteTypeName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.turing.web.entity.NoteType" >
+    update NOTE_TYPE
+    set NOTE_TYPE_NAME = #{noteTypeName,jdbcType=VARCHAR}
+    where NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

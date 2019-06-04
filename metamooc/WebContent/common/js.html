@@ -1,0 +1,89 @@
+<th:block th:fragment="commonjs">
+	<!-- jQuery 3 -->
+	<script th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
+	<!-- jQuery UI 1.11.4 -->
+	<script th:src="@{/bower_components/jquery-ui/jquery-ui.min.js}"></script>
+	<!-- Bootstrap 3.3.7 -->
+	<script th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<!-- Morris.js charts -->
+	<script th:src="@{/bower_components/raphael/raphael.min.js}"></script>
+	<script th:src="@{/bower_components/morris.js/morris.min.js}"></script>
+	<!-- Sparkline -->
+	<script th:src="@{/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js}"></script>
+	<!-- jvectormap -->
+	<script th:src="@{/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+	<script th:src="@{/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+	<!-- jQuery Knob Chart -->
+	<script th:src="@{/bower_components/jquery-knob/dist/jquery.knob.min.js}"></script>
+	<!-- daterangepicker -->
+	<script th:src="@{/bower_components/moment/min/moment.min.js}"></script>
+	<script th:src="@{/bower_components/bootstrap-daterangepicker/daterangepicker.js}"></script>
+	<!-- datepicker -->
+	<script th:src="@{/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js}"></script>
+	<!-- Bootstrap WYSIHTML5 -->
+	<script th:src="@{/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script>
+	<!-- Slimscroll -->
+	<script th:src="@{/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}"></script>
+	<!-- FastClick -->
+	<script th:src="@{/bower_components/fastclick/lib/fastclick.js}"></script>
+	<!-- AdminLTE App -->
+	<script th:src="@{/dist/js/adminlte.min.js}"></script>
+	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+	<script th:src="@{/dist/js/pages/dashboard.js}"></script>
+	<!-- datetimepicker -->
+	<script th:src="@{/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js}"></script>
+	<script th:src="@{/bower_components/bootstrap-datetimepicker/js/bootstrap-datetimepicker.zh-CN.js}"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script th:src="@{/dist/js/demo.js}"></script>
+	<!-- bootbox -->
+	<script th:src="@{/bower_components/bootbox/js/bootbox.js}"></script>
+	<!-- 省市区三级联动插件 -->
+	<script th:src="@{/plugins/dist/distpicker.data.js}"></script>
+	<script th:src="@{/plugins/dist/distpicker.js}"></script>
+	<!-- daterangepicker -->
+	<script th:src="@{/bower_components/moment/min/moment.min.js}"></script>
+	<script th:src="@{/bower_components/bootstrap-daterangepicker/daterangepicker.js}"></script>
+	<!-- datepicker -->
+	<script th:src="@{/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js}"></script>
+	<!-- InputMask -->
+	<script th:src="@{/plugins/input-mask/jquery.inputmask.js}"></script>
+	<script th:src="@{/plugins/input-mask/jquery.inputmask.date.extensions.js}"></script>
+	<script th:src="@{/plugins/input-mask/jquery.inputmask.extensions.js}"></script>
+	<!-- 金额大小写及限制输入 -->
+	<script th:src="@{/bower_components/capitals/capitals.js}"></script>
+	<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+	<script>
+	  $.widget.bridge('uibutton', $.ui.button);
+	  //这里给所有ajax请求添加一个complete函数来处理ajax被拦截的情况
+	  $.ajaxSetup({ 
+		  complete : function(xhr, status) { 
+		  //拦截器实现超时跳转到登录页面
+		  // 通过xhr取得响应头
+		  var REDIRECT = xhr.getResponseHeader("REDIRECT"); 
+		  //如果响应头中包含 REDIRECT 则说明是拦截器返回的 
+		  if (REDIRECT == "REDIRECT") { 
+		  	var win = window; 
+			while (win != win.top) 
+			{ 
+				win = win.top; 
+			} 
+			//重新跳转到 login.html 
+			win.location.href = xhr.getResponseHeader("CONTEXTPATH"); 
+			} 
+		} 
+	});
+	//根据key得到cookie中的值
+  	function getCookie(c_name) {
+		if(document.cookie.length > 0) {
+			c_start = document.cookie.indexOf(c_name + "=");//获取字符串的起点
+			if(c_start != -1) {
+				c_start = c_start + c_name.length + 1;//获取值的起点
+				c_end = document.cookie.indexOf(";", c_start);//获取结尾处
+				if(c_end == -1) c_end = document.cookie.length;//如果是最后一个，结尾就是cookie字符串的结尾
+				return decodeURI(document.cookie.substring(c_start, c_end));//截取字符串返回
+			}
+		}
+		return "";
+	}
+  </script>
+</th:block>

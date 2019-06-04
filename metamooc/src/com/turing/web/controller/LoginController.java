@@ -44,7 +44,8 @@ public class LoginController {
 			if (stu.getStuPass().equals(pass)) {
 				// 验证密码通过
 				// 验证是否过期
-				int flag = loginService.isInvalid();
+				int flag = -1; //loginService.isInvalid();
+			
 				if (flag > 0) {
 					// 已过期
 					model.addAttribute("msg", "账号已过期");

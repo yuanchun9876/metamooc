@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.turing.web.mapper.StuStudyNoteMapper" >
+  <resultMap id="BaseResultMap" type="com.turing.web.entity.StuStudyNote" >
+    <id column="STU_NOTE_ID" property="stuNoteId" jdbcType="VARCHAR" />
+    <result column="NOTE_TYPE_ID" property="noteTypeId" jdbcType="VARCHAR" />
+    <result column="STU_ID" property="stuId" jdbcType="VARCHAR" />
+    <result column="STU_STDY_ID" property="stuStdyId" jdbcType="VARCHAR" />
+    <result column="STU_NOTE_CONTENT" property="stuNoteContent" jdbcType="VARCHAR" />
+    <result column="STU_NOTE_TIME" property="stuNoteTime" jdbcType="TIMESTAMP" />
+    <result column="STU_NOTE_PROG" property="stuNoteProg" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STU_NOTE_ID, NOTE_TYPE_ID, STU_ID, STU_STDY_ID, STU_NOTE_CONTENT, STU_NOTE_TIME, 
+    STU_NOTE_PROG
+  </sql>
+  
+  
+  
+  
+  
+  <select id="queryStuStudyNoteByStu" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+  	ssn.STU_NOTE_ID, ssn.NOTE_TYPE_ID, ssn.STU_ID, ssn.STU_STDY_ID, ssn.STU_NOTE_CONTENT, ssn.STU_NOTE_TIME,ssn.STU_NOTE_PROG
+  	
+    from STU_STUDY_NOTE ssn left join STU_STUDY ss   on ssn.STU_STDY_ID = ss.STU_STDY_ID
+    where ssn.STU_ID = #{value,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from STU_STUDY_NOTE
+    where STU_NOTE_ID = #{stuNoteId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from STU_STUDY_NOTE
+    where STU_NOTE_ID = #{stuNoteId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.turing.web.entity.StuStudyNote" >
+    insert into STU_STUDY_NOTE (STU_NOTE_ID, NOTE_TYPE_ID, STU_ID, 
+      STU_STDY_ID, STU_NOTE_CONTENT, STU_NOTE_TIME, 
+      STU_NOTE_PROG)
+    values (#{stuNoteId,jdbcType=VARCHAR}, #{noteTypeId,jdbcType=VARCHAR}, #{stuId,jdbcType=VARCHAR}, 
+      #{stuStdyId,jdbcType=VARCHAR}, #{stuNoteContent,jdbcType=VARCHAR}, #{stuNoteTime,jdbcType=TIMESTAMP}, 
+      #{stuNoteProg,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.turing.web.entity.StuStudyNote" >
+    insert into STU_STUDY_NOTE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuNoteId != null" >
+        STU_NOTE_ID,
+      </if>
+      <if test="noteTypeId != null" >
+        NOTE_TYPE_ID,
+      </if>
+      <if test="stuId != null" >
+        STU_ID,
+      </if>
+      <if test="stuStdyId != null" >
+        STU_STDY_ID,
+      </if>
+      <if test="stuNoteContent != null" >
+        STU_NOTE_CONTENT,
+      </if>
+      <if test="stuNoteTime != null" >
+        STU_NOTE_TIME,
+      </if>
+      <if test="stuNoteProg != null" >
+        STU_NOTE_PROG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuNoteId != null" >
+        #{stuNoteId,jdbcType=VARCHAR},
+      </if>
+      <if test="noteTypeId != null" >
+        #{noteTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuId != null" >
+        #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuStdyId != null" >
+        #{stuStdyId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNoteContent != null" >
+        #{stuNoteContent,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNoteTime != null" >
+        #{stuNoteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stuNoteProg != null" >
+        #{stuNoteProg,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.turing.web.entity.StuStudyNote" >
+    update STU_STUDY_NOTE
+    <set >
+      <if test="noteTypeId != null" >
+        NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuId != null" >
+        STU_ID = #{stuId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuStdyId != null" >
+        STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNoteContent != null" >
+        STU_NOTE_CONTENT = #{stuNoteContent,jdbcType=VARCHAR},
+      </if>
+      <if test="stuNoteTime != null" >
+        STU_NOTE_TIME = #{stuNoteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="stuNoteProg != null" >
+        STU_NOTE_PROG = #{stuNoteProg,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where STU_NOTE_ID = #{stuNoteId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.turing.web.entity.StuStudyNote" >
+    update STU_STUDY_NOTE
+    set NOTE_TYPE_ID = #{noteTypeId,jdbcType=VARCHAR},
+      STU_ID = #{stuId,jdbcType=VARCHAR},
+      STU_STDY_ID = #{stuStdyId,jdbcType=VARCHAR},
+      STU_NOTE_CONTENT = #{stuNoteContent,jdbcType=VARCHAR},
+      STU_NOTE_TIME = #{stuNoteTime,jdbcType=TIMESTAMP},
+      STU_NOTE_PROG = #{stuNoteProg,jdbcType=DECIMAL}
+    where STU_NOTE_ID = #{stuNoteId,jdbcType=VARCHAR}
+  </update>
+</mapper>

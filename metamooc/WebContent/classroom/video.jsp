@@ -1,3 +1,5 @@
+<%@page import="com.turing.web.entity.StuStudy"%>
+<%@page import="com.turing.web.entity.NoteType"%>
 <%@page import="com.turing.manage.entity.ResourceData"%>
 <%@page import="com.turing.manage.entity.ResourceType"%>
 <%@page import="com.turing.web.entity.Student"%>
@@ -98,7 +100,18 @@
 							for(int i=0; i<sctnList.size(); i++){
 								SubjSection subjSctn = sctnList.get(i);
 								%>
-								<li class="swiper-slide <%=((SubjSection)request.getAttribute("sctn")).getSubjSctnId().equals(subjSctn.getSubjSctnId())?"active":"" %>"><a href="<%=request.getContextPath() %>/classroom/querySctnByUnit.action?unitId=<%=subjSctn.getSubjUnitId() %>&sctnId=<%=subjSctn.getSubjSctnId() %>"><%=subjSctn.getSubjSctnTitle() %></a></li>
+								<li class="swiper-slide <%=((SubjSection)request.getAttribute("sctn")).getSubjSctnId().equals(subjSctn.getSubjSctnId())?"active":"" %>">
+									<%
+										if(((SubjSection)request.getAttribute("sctn")).getSubjSctnId().equals(subjSctn.getSubjSctnId())){
+											out.print(subjSctn.getSubjSctnTitle());
+										}else{
+											%>
+											<a href="<%=request.getContextPath() %>/classroom/querySctnByUnit.action?unitId=<%=subjSctn.getSubjUnitId() %>&sctnId=<%=subjSctn.getSubjSctnId() %>"><%=subjSctn.getSubjSctnTitle() %></a>
+											<%
+										}
+									%>
+									
+								</li>
 								<%
 							}
 						%>
@@ -235,8 +248,20 @@
 						</div>
 					</li>
 				</ul>
-				<form action="">
-					<script id="editor" type="text/plain"></script>
+				<form action="" method="post" >
+					<input name="" value="<%=((StuStudy)request.getAttribute("stuStudy")).getStuStdyId()%>">
+					<textarea rows="5" cols="20" name="" ></textarea>
+					<br/>
+					<select name="" >
+					<%
+					List<NoteType> noteTypeList = (List<NoteType> )request.getAttribute("noteTypeList");
+					for(NoteType nt : noteTypeList){
+						%>
+						<option value="<%=nt.getNoteTypeId() %>" ><%=nt.getNoteTypeName() %></option>
+						<%
+					}
+					%>
+					</select>
 					<div class="button">
 						<button>新增</button>
 						<button>保存</button>
@@ -438,9 +463,6 @@
 						</div>
 					</li>
 				</ul>
-
-
-
 			</div>
 			<span class="fa fa-close"></span>
 		</div>

@@ -1,6 +1,8 @@
 package com.turing.web.service.impl;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,13 @@ import com.turing.manage.mapper.ResourceDataMapper;
 import com.turing.manage.mapper.ResourceTypeMapper;
 import com.turing.manage.mapper.SubjSectionMapper;
 import com.turing.manage.mapper.SubjUnitMapper;
+import com.turing.web.entity.NoteType;
+import com.turing.web.entity.StuStudy;
+import com.turing.web.entity.StuStudyNote;
 import com.turing.web.entity.Student;
+import com.turing.web.mapper.NoteTypeMapper;
+import com.turing.web.mapper.StuStudyMapper;
+import com.turing.web.mapper.StuStudyNoteMapper;
 import com.turing.web.mapper.StudentMapper;
 import com.turing.web.service.IClassroomService;
 
@@ -34,6 +42,16 @@ public class ClassroomServiceImpl implements IClassroomService {
 	
 	@Autowired
 	private ResourceDataMapper  rsrcDataMapper;
+	
+	@Autowired
+	private NoteTypeMapper  noteTypeMapper;
+	
+	@Autowired
+	private StuStudyNoteMapper  ssNoteMapper;
+	
+	@Autowired
+	private StuStudyMapper stuStudyMapper;
+	
 
 	@Override
 	public List<SubjUnit> querySubjUnitListBySubj(String subjId) {
@@ -75,6 +93,42 @@ public class ClassroomServiceImpl implements IClassroomService {
 	public SubjSection querySctnById(String sctnId) {
 		// TODO Auto-generated method stub
 		return sctnMapper.selectByPrimaryKey(sctnId);
+	}
+
+	@Override
+	public List<NoteType> queryNoteType() {
+		// TODO Auto-generated method stub
+		return noteTypeMapper.queryAll();
+	}
+
+	@Override
+	public List<StuStudyNote> queryStuStudyNoteByStu(String stuId) {
+		// TODO Auto-generated method stub
+		return ssNoteMapper.queryStuStudyNoteByStu(stuId);
+	}
+
+	@Override
+	public StuStudy stuStudyInfo(String stuId, String subjSctnId) {
+		// TODO Auto-generated method stub
+		// 根据 两个ID 判断是否有记录
+		StuStudy stuStudy = stuStudyMapper.isHavRow(stuId, subjSctnId);
+		if (stuStudy == null) {
+			// 没有 就新增
+			stuStudy = new StuStudy();
+			stuStudy.setStuStdyId(UUID.randomUUID().toString());
+			stuStudy.setStuId(stuId);
+			stuStudy.setStdyBeginTime(new Date());
+			stuStudy.setStdyNewTime(new Date());
+			stuStudy.setStdyIsover("0");
+			stuStudy.setSubjSctnId(subjSctnId);
+			//
+			stuStudyMapper.insertSelective(stuStudy);
+		} else {
+			// 有就修改信息
+			stuStudy.setStdyNewTime(new Date());
+			stuStudyMapper.updateByPrimaryKeySelective(stuStudy);
+		}
+		return stuStudy;
 	}
 	
 	
