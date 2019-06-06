@@ -249,7 +249,7 @@
 					</li>
 				</ul>
 				<form action="" method="post" >
-					<input name="" value="<%=((StuStudy)request.getAttribute("stuStudy")).getStuStdyId()%>">
+					<input    name="" value="<%=((StuStudy)request.getAttribute("stuStudy")).getStuStdyId()%>">
 					<textarea rows="5" cols="20" name="" ></textarea>
 					<br/>
 					<select name="" >

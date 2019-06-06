@@ -18,4 +18,6 @@ public interface SubjSectionMapper {
     int updateByPrimaryKey(SubjSection record);
 
 	List<SubjSection> queryByUnit(String subjUnitId);
+
+	List<SubjSection> queryAllByTchId(String tchId);
 }
