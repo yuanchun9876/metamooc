@@ -1,7 +1,9 @@
 package com.turing.web.controller;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.turing.manage.entity.ResourceData;
 import com.turing.manage.entity.ResourceType;
@@ -146,5 +149,31 @@ public class ClassroomController {
 		return "classroom/video";
 	}
 	
-
+	
+	
+	@RequestMapping("/stdyNote")
+	@ResponseBody
+	public Map stdyNote(StuStudyNote note, HttpSession session) {
+		System.out.println("/classroom/stdyNote" + note);
+		// 学员信息
+		Student stu = (Student) session.getAttribute("stu");
+		note.setStuNoteId(UUID.randomUUID().toString());
+		note.setStuNoteTime(new Date());
+		note.setStuId(stu.getStuId());
+		int count = classroomService.addStudyNote(note);
+		
+		
+		Map map = new HashMap();
+		if(count > 0) {
+			map.put("respCode", "OK");
+			map.put("respMsg", "保存成功");
+			map.put("respObj", note);
+			return map;
+		}else {
+			map.put("respCode", "ERROR");
+			map.put("respMsg", "保存出现问题");
+			return map;
+		}
+		
+	}
 }

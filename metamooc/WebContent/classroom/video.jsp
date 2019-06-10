@@ -248,11 +248,12 @@
 						</div>
 					</li>
 				</ul>
-				<form action="" method="post" >
-					<input    name="" value="<%=((StuStudy)request.getAttribute("stuStudy")).getStuStdyId()%>">
-					<textarea rows="5" cols="20" name="" ></textarea>
+				<form action="<%=request.getContextPath() %>/classroom/stdyNote.action" method="post"  name="addNoteForm" >
+					<input type="hidden"   name="stuStdyId" id = "stuStdyId"  value="<%=((StuStudy)request.getAttribute("stuStudy")).getStuStdyId()%>">
+					<input  type="hidden" name="stuNoteProg" id="stuNoteProg">
+					<textarea rows="5" cols="20" name="stuNoteContent" id="stuNoteContent" ></textarea>	
 					<br/>
-					<select name="" >
+					<select name="noteTypeId" id="noteTypeId"  >
 					<%
 					List<NoteType> noteTypeList = (List<NoteType> )request.getAttribute("noteTypeList");
 					for(NoteType nt : noteTypeList){
@@ -263,8 +264,7 @@
 					%>
 					</select>
 					<div class="button">
-						<button>新增</button>
-						<button>保存</button>
+						<button type="button" onclick="addNote()" >新增</button>
 					</div>
 				</form>
 			</div>
@@ -541,6 +541,27 @@
 		});
 
 
+		// 提交 新增笔记
+		function addNote(){
+			console.log("time:" + player1.currentTime());
+			$("#stuNoteProg").val(parseInt(player1.currentTime()));
+			var url = "<%=request.getContextPath() %>/classroom/stdyNote.action";
+			var data = //$("#addNoteForm").serialize();
+			{
+				"noteTypeId":$("#noteTypeId").val(),
+				"stuStdyId":$("#stuStdyId").val(),
+				"stuNoteContent":$("#stuNoteContent").val(),
+				"stuNoteProg":$("#stuNoteProg").val(),
+			}
+			
+			console.log(data);
+			$.post(url, data, function(response) {
+				if(response.respCode == "OK"){
+					console.log(response.respMsg);
+				}
+			}, "json");
+		}
+		
 
 		//左边栏拖拽
 		var dragW=0;

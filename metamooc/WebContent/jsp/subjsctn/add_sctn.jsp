@@ -120,7 +120,7 @@
 				<!-- Main content -->
 				<section class="content">
 					<div class="row">
-						<form class="form form-horizontal" method="post" onsubmit="return addSaveCustom()"  action="<%=request.getContextPath() %>/subjSctn/addSave.action"  >
+						<form class="form form-horizontal" method="post"   enctype="multipart/form-data"  action="<%=request.getContextPath() %>/subjSctn/addSave.action"  >
 							<!-- left column -->
 							<div class="col-md-8 col-md-offset-2">
 								<!-- general form elements -->
@@ -163,13 +163,13 @@
 										<div class="form-group">
 											<label for="cardid" class="col-sm-2 control-label">图片上传</label>
 											<div class="col-sm-10">
-												<input type="file" class="form-control" name='subjSctnLogoUrl' placeholder="请您输入图片上传"  required="required">
+												<input type="file" class="form-control" name='sctnPicUrl' placeholder="请您输入图片上传"  required="required">
 											</div>
 										</div>
 										<div class="form-group">
 											<label for="birth" class="col-sm-2 control-label">视频上传</label>
 											<div class="col-sm-10">
-												<input type="file" name="subjSctnVideoUrl" class="form-control"   placeholder="请您输入视频上传"  required="required">
+												<input type="file" name="sctnVideoUrl" class="form-control"   placeholder="请您输入视频上传"  required="required">
 											</div>
 										</div>
 										<div class="form-group">

@@ -51,7 +51,7 @@
 						<ul>
 							<li><a href="index.html">线上习得</a></li>
 							<li><a href="<%=request.getContextPath()%>/login.jsp">线下面授</a></li>
-							<li><a href="gdzc.html">搞定职场</a></li>
+							<li><a href="<%=request.getContextPath()%>/upload.jsp">搞定职场</a></li>
 							<li><a href="about.html">关于我们</a></li>
 						</ul>
 					</div>

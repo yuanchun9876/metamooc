@@ -125,7 +125,10 @@
         				<td >${scth.subjSctnNum }</td>
         				<td >${scth.subjSctnCode }</td>
         				<td >${scth.subjSctnVideoLen }</td>
-						<td><button type="button" class="btn btn-primary btn-sm" onclick="javascript:editpage('${scth.subjSctnId }')">修改</button></td>
+						<td>
+							<button type="button" class="btn btn-primary btn-sm" onclick="javascript:editpage('${scth.subjSctnId }')">修改</button>
+							<button type="button" class="btn btn-info btn-sm" onclick="javascript:playpage('${scth.subjSctnTitle }','${scth.subjSctnId }')">播放视频</button>
+						</td>
         			</tr>
         			</c:forEach>
         		</table>
@@ -171,46 +174,45 @@
 	
 	<script type="text/javascript">
 	  $.widget.bridge('uibutton', $.ui.button);
-	  //这里给所有ajax请求添加一个complete函数来处理ajax被拦截的情况
-	  $.ajaxSetup({ 
-		  complete : function(xhr, status) { 
-		  //拦截器实现超时跳转到登录页面
-		  // 通过xhr取得响应头
-		  var REDIRECT = xhr.getResponseHeader("REDIRECT"); 
-		  //如果响应头中包含 REDIRECT 则说明是拦截器返回的 
-		  if (REDIRECT == "REDIRECT") { 
-		  	var win = window; 
-			while (win != win.top) 
-			{ 
-				win = win.top; 
-			} 
-			//重新跳转到 login.html 
-			win.location.href = xhr.getResponseHeader("CONTEXTPATH"); 
-			} 
-		} 
-	});
+
 	  
 	function addPage(){
 		location.href = "<%=request.getContextPath()%>/subjSctn/addPage.action"; 
 	}
 
-	$(function(){
-		$('#datemask').inputmask('yyyy/mm/dd', { 'placeholder': 'yyyy/mm/dd' })
-		$('[data-mask]').inputmask();
-	})
-	//条件查询
-	/*
-	$("button[name='queryInfo']").on("click",function(){
-		$("form[name='infoForm']").attr("action","/customerFiling/customList");
-		$("form[name='infoForm']").submit();
-	})*/
-	  //跳转修改页
 	function editpage(id){
-		
-		location.href="#";
-		
-		return false;
+		location.href = "<%=request.getContextPath()%>/subjSctn/editPage.action?subjSctnId=" + id; 
 	}
+	
+	function playpage(title, id){
+		 bootbox.dialog({
+			  // dialog的内容
+			  message: "<iframe src='<%=request.getContextPath()%>/subjSctn/videoPlay.action?subjSctnId=" + id + "' style='width:100%;height:369px;border:0 solid;'></iframe>",
+			   
+			  // dialog的标题
+			  title: title,
+			   
+			  // 是否显示此dialog，默认true
+			  show: true,
+
+			     // 显示尺寸，可选 small  /large
+			 size: "large",
+
+			  // 是否显示body的遮罩，默认true
+			  backdrop: true,
+			   
+			  // 是否显示关闭按钮，默认true
+			  closeButton: true,
+			   
+			  // 是否动画弹出dialog，IE10以下版本不支持
+			  animate: true,
+			   
+			  // dialog的类名
+			  className: "my-modal",
+			   
+			});
+	}
+
 </script>
 </body>
 </html>

@@ -34,4 +34,6 @@ public interface IClassroomService {
 
 	StuStudy stuStudyInfo(String stuId, String subjSctnId);
 
+	int addStudyNote(StuStudyNote note);
+
 }

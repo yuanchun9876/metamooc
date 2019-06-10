@@ -15,4 +15,6 @@ public interface ISubjSectionService {
 
 	int save(SubjSection sctn);
 
+	SubjSection queryById(String subjSctnId);
+
 }

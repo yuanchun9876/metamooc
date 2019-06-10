@@ -130,6 +130,12 @@ public class ClassroomServiceImpl implements IClassroomService {
 		}
 		return stuStudy;
 	}
+
+	@Override
+	public int addStudyNote(StuStudyNote note) {
+		// TODO Auto-generated method stub
+		return ssNoteMapper.insertSelective(note);
+	}
 	
 	
 }

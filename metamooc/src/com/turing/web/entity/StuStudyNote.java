@@ -17,8 +17,17 @@ public class StuStudyNote {
     private Date stuNoteTime;
 
     private Integer stuNoteProg;
+    
+    
 
-    public String getStuNoteId() {
+    @Override
+	public String toString() {
+		return "StuStudyNote [stuNoteId=" + stuNoteId + ", noteTypeId=" + noteTypeId + ", stuId=" + stuId
+				+ ", stuStdyId=" + stuStdyId + ", stuNoteContent=" + stuNoteContent + ", stuNoteTime=" + stuNoteTime
+				+ ", stuNoteProg=" + stuNoteProg + "]";
+	}
+
+	public String getStuNoteId() {
         return stuNoteId;
     }
 
