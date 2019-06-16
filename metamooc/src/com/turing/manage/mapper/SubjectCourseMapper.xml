@@ -10,9 +10,18 @@
     <result column="SUBJ_INFO" property="subjInfo" jdbcType="VARCHAR" />
     <result column="SUBJ_PROGRESS" property="subjProgress" jdbcType="INTEGER" />
   </resultMap>
+  
   <sql id="Base_Column_List" >
     SUBJ_ID, SUBJ_TITLE, SUBJ_NUM, SUBJ_CODE, SUBJ_LOGO_URL, SUBJ_INFO, SUBJ_PROGRESS
   </sql>
+  
+  <select id="queryAll" resultMap="BaseResultMap"  >
+    select 
+    <include refid="Base_Column_List" />
+    from subject_course
+  </select>
+  
+  
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />

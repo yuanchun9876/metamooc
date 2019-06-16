@@ -11,6 +11,13 @@
     RSRC_TYPE_ID, RSRC_TYPE_NAME, RSRC_TYPE_INFO, RSRC_TYPE_NUM
   </sql>
   
+  <select id="queryAll" resultMap="BaseResultMap"  >
+    select 
+    RSRC_TYPE_ID, RSRC_TYPE_NAME, RSRC_TYPE_INFO, RSRC_TYPE_NUM
+    from resource_type
+	order by RSRC_TYPE_NUM
+  </select>
+  
   <select id="queryRsrcTypeByUnit" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     RSRC_TYPE_ID, RSRC_TYPE_NAME, RSRC_TYPE_INFO, RSRC_TYPE_NUM

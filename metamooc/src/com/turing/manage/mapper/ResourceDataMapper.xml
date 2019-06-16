@@ -13,6 +13,12 @@
   <sql id="Base_Column_List" >
     RSRC_ID, SUBJ_UNIT_ID, RSRC_TYPE_ID, RSRC_NAME, RSRC_PATH, RSRC_INFO, RSRC_LOGO_URL
   </sql>
+  <select id="queryAll" resultMap="BaseResultMap"  >
+    select 
+    RSRC_ID, SUBJ_UNIT_ID, RSRC_TYPE_ID, RSRC_NAME, RSRC_PATH, RSRC_INFO, RSRC_LOGO_URL
+    from resource_data
+  </select>
+  
   <select id="queryRsrcDataByUnit" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     RSRC_ID, SUBJ_UNIT_ID, RSRC_TYPE_ID, RSRC_NAME, RSRC_PATH, RSRC_INFO, RSRC_LOGO_URL

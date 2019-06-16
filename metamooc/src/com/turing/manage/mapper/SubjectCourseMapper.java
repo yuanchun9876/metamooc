@@ -1,5 +1,7 @@
 package com.turing.manage.mapper;
 
+import java.util.List;
+
 import com.turing.manage.entity.SubjectCourse;
 
 public interface SubjectCourseMapper {
@@ -14,4 +16,6 @@ public interface SubjectCourseMapper {
     int updateByPrimaryKeySelective(SubjectCourse record);
 
     int updateByPrimaryKey(SubjectCourse record);
+
+	List<SubjectCourse> queryAll();
 }

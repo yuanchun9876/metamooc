@@ -18,4 +18,6 @@ public interface ResourceDataMapper {
     int updateByPrimaryKey(ResourceData record);
 
 	List<ResourceData> queryRsrcDataByUnit(String unitId);
+
+	List<ResourceData> queryAll();
 }

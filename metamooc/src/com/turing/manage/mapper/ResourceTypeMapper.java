@@ -18,4 +18,6 @@ public interface ResourceTypeMapper {
     int updateByPrimaryKey(ResourceType record);
 
 	List<ResourceType> queryRsrcTypeByUnit(String unitId);
+
+	List<ResourceType> queryAll();
 }

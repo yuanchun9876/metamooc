@@ -160,28 +160,40 @@
 				<ul class="sidebar-menu" data-widget="tree">
 					<li class="treeview">
 						<a href="#"> 
-							<i class="fa fa-user-plus"></i><span>菜单一</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
+							<i class="fa fa-user-plus"></i><span>基础信息</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
 						</a>
 						<ul class="treeview-menu">
-							<li><a href="<%=request.getContextPath()%>/example/list.jsp"  target="ifr" > <i class="fa fa-circle-o"></i> <span>列表菜单</span>
+							<li><a href="<%=request.getContextPath()%>/tch/query.action"  target="ifr" > <i class="fa fa-circle-o"></i> <span>教师信息</span>
 							</a></li>
 							<li><a href="<%=request.getContextPath()%>/example/add.jsp"  target="ifr" > <i class="fa fa-circle-o"></i> <span>添加菜单1</span>
 							</a></li>
 							<li><a href="<%=request.getContextPath()%>/example/add2.jsp"  target="ifr"> <i class="fa fa-circle-o"></i> <span>添加菜单2</span>
 							</a></li>
 						</ul>
-					</li>
-					<li class="treeview"><a href="<%=request.getContextPath()%>/example/list.jsp"  target="ifr" > <i class="fa fa-user-plus"></i> <span>菜单二</span></a></li>
+					</li>				
 					<li class="treeview">
 						<a href="#"> 
-							<i class="fa fa-user-plus"></i><span>菜单三</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
+							<i class="fa fa-user-plus"></i><span>知识视频</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
 						</a>
-						<ul class="treeview-menu">
+						<ul class="treeview-menu">				
+							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>科目单元</span>
+							</a></li>
+							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>知识章</span>
+							</a></li>
 							<li><a href="<%=request.getContextPath()%>/subjSctn/query.action"  target="ifr" > <i class="fa fa-circle-o"></i> <span>知识节</span>
 							</a></li>
-							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>子菜单二</span>
+						</ul>
+					</li>
+					<li class="treeview">
+						<a href="#"> 
+							<i class="fa fa-user-plus"></i><span>辅助信息</span><span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
+						</a>
+						<ul class="treeview-menu">				
+							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>资料类型</span>
 							</a></li>
-							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>子菜单三</span>
+							<li><a href="#"> <i class="fa fa-circle-o"></i> <span>上传资料</span>
+							</a></li>
+							<li><a href="<%=request.getContextPath()%>/subjSctn/query.action"  target="ifr" > <i class="fa fa-circle-o"></i> <span>知识节</span>
 							</a></li>
 						</ul>
 					</li>
